@@ -1,3 +1,15 @@
-.ghey{
-	color:#fcba03;
+.Header{
+	color:#a32f80;
+	background-color:#341677;
+	font-family: 'Lexend Peta', sans-serif;
+	font-size:100px;
+}
+.Header2{
+	color:#ff6363;
+	background-color:#341677;
+	font-family: 'Lexend Peta', sans-serif;
+	font-size:35px;
+}
+body{
+	background-color:#000272;
 }
