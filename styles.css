@@ -1,15 +1,64 @@
-.Header{
-	color:#a32f80;
-	background-color:#341677;
-	font-family: 'Lexend Peta', sans-serif;
-	font-size:100px;
+/*fonts*/
+@font-face {
+	font-family: "Bebas";
+	src: url("BebasNeue-Regular.woff") format('woff');
+	src: url("BebasNeue-Regular.woff2") format('woff2');
+	src: url('BebasNeue-Regular.ttf') format('truetype');
 }
-.Header2{
-	color:#ff6363;
-	background-color:#341677;
-	font-family: 'Lexend Peta', sans-serif;
+/*styles*/
+.Header1{
+	font-size:100px;
+	font-family: "Bebas";
+	line-height:0px;
+	color:#5d5d5d;
+}
+nav{
+	font-family: 'Cousine', monospace;;
 	font-size:35px;
+	color:#a0c334;
+	line-height:35px;
+}
+a{
+	text-decoration:none;
+	font-family: 'Cousine', monospace;
+}
+a:visited{
+	color:#a0c334;
+}
+a:link{
+	color:#a0c334;
+}
+a:hover{
+	opacity:0.5;
 }
 body{
-	background-color:#000272;
+	background-color:#f7f7f7;
+}
+p{
+	color:#e5d429;
+	font-size:25px;
+	font-family: 'Roboto Mono', monospace
+}
+hr{
+	color:#5d5d5d;
+}
+.Header2{
+	font-family: 'Cousine', monospace;
+	color:#e5d429;
+	font-size:40px;
+}
+#portfolio-mobile{
+	display:none;
+}
+#portfolio-desktop{
+	display:block;
+}
+/*Mobile Responsiveness*/
+@media screen and (max-width:900px){
+	#portfolio-mobile{
+		display:block;
+	}
+	#portfolio-desktop{
+		display:none;
+	}
 }
