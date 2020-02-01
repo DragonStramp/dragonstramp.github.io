@@ -1,0 +1,230 @@
+/* ---------------fonts------------------- */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@font-face {
+    font-family: 'pixellari';
+    src: url('../fonts/pixellari-webfont.woff2') format('woff2'),
+         url('../fonts/pixellari-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+/* -----------Individual Selectors---------- */
+body {
+  margin:0;
+  background-color:#f8f8f8;
+}
+/* ------------Classes--------------------- */
+/* logo */
+.logo-div {
+  margin-top:5vmax;
+}
+.logo-header1 {
+  font-family: 'pixellari';
+  color:#ffdc34;
+  font-size:10vmax;
+  margin:12vmax 0 0 10vmax;
+  opacity:0;
+  animation-name:fadein;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+}
+.logo-header2 {
+  font-family: 'pixellari';
+  color:#4dd599;
+  font-size:6vmax;
+  margin:-1vmax 0 0 16vmax;
+  opacity:0;
+  animation-name:fadein;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+}
+.header1 {
+  font-family: 'pixellari';
+  color:#00918e;
+  font-size:15vmax;
+  margin: 3vmax 25% -5vmax 25%;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+}
+.header2 {
+  font-family: 'pixellari';
+  color:#00918e;
+  font-size:10vmax;
+  margin: 3vmax 25% -3vmax 30%;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+}
+.ship-intro {
+  position:relative;
+  height:11vmax;
+  animation-name:shipintroanimation, fadein;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  animation-timing-function:ease-in-out;
+}
+.ship-dust {
+  position:absolute;
+  height:11vmax;
+  left:40vmax;
+  transform: rotate(0.08turn);
+  animation-name: fadein;
+  animation-delay: 0.75s;
+  animation-duration:0.5s;
+  opacity:0;
+  animation-fill-mode: forwards;
+}
+
+/* HeaderText */
+.logo-next {
+  position:relative;
+  height:1vmax;
+  width:35vmax;
+  top:-25vmax;
+  left:62.5vmax;
+  text-align:left;
+}
+.header-text {
+  color:#4dd599;
+  font-family: 'Oswald', sans-serif;
+  font-size:2.2vmax;
+  display:inline-block;
+}
+.info{
+  font-size:2vmax;
+  color:#f8f8f8;
+  font-family: 'Oswald', sans-serif;
+  text-decoration:none;
+  display:block;
+  padding-bottom: 0.1vmax;
+  vertical-align: middle;
+}
+.info-button {
+  background-color:#4dd599;
+  width:15vmax;
+  height:3vmax;
+  text-align:center;
+  display:flex;
+  justify-content: center;
+  flex-direction:column;
+  border-radius:10px;
+  opacity:0.5;
+  transition-duration:0.25s;
+}
+.info-button:hover {
+  opacity:1;
+
+}
+/* --------------------ID's--------------- */
+#daegon-img {
+  height:22vmax;
+  margin:1vmax;
+  border-radius:10px;
+}
+#home-page-cactus1 {
+  position:absolute;
+  height:5vmax;
+  margin:0;
+  opacity:0.32;
+  left:10vmax;
+  top:5vmax;
+  animation-name: fade-in-objects;
+  animation-duration: 1s;
+  animation-delay:0.1s;
+  opacity:0;
+  animation-fill-mode: forwards;
+}
+#home-page-cactus2 {
+  position:absolute;
+  height:3vmax;
+  margin:0;
+  opacity:0.32;
+  left:70vmax;
+  top:7vmax;
+  animation-name: fade-in-objects;
+  animation-duration: 1s;
+  animation-delay:0.5s;
+  opacity:0;
+  animation-fill-mode: forwards;
+}
+#home-page-skull {
+  position:absolute;
+  height:2.5vmax;
+  margin:0;
+  opacity:0.32;
+  left:34vmax;
+  top:7.5vmax;
+  animation-name: fade-in-objects;
+  animation-duration: 1s;
+  animation-delay:0.3s;
+  opacity:0;
+  animation-fill-mode: forwards;
+}
+#home-page-spaceman {
+  position:relative;
+  height:2.5vmax;
+  margin:0;
+  opacity:0.32;
+  bottom:31.675vmax;
+  left:59vmax;
+  animation-name: fade-in-objects;
+  animation-duration: 1s;
+  animation-delay:1.3s;
+  opacity:0;
+  animation-fill-mode: forwards;
+}
+#game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  text-align:center;
+  opacity:0;
+  animation-fill-mode: forwards;
+  animation-name:fadein;
+  animation-duration: 1s;
+  animation-delay:1.5s;
+}
+.web-text {
+  margin:-10vmax 0 0 0;
+  text-decoration:none;
+  color:#ffdc34;
+  font-family: 'pixellari';
+  font-size:3vmax;
+  opacity:0;
+  animation-fill-mode: forwards;
+  animation-name:fadein;
+  animation-duration: 1s;
+  animation-delay:1.5s;
+  position:relative;
+}
+#dev-spacing {
+  margin-top:1vmax;
+  text-align:center;
+}
+/* -----------------Animations------------ */
+@keyframes shipintroanimation {
+    from {
+      left:-10vmax;
+      transform: rotate(0.25turn);
+      bottom:-3vmax;
+    }
+    50% {
+      bottom:-3vmax;
+      transform: rotate(0.2turn)
+    }
+    to {
+      left:44vmax;
+      bottom:11vmax;
+      transform: rotate(0.08turn);
+    }
+    }
+@keyframes fadein {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+@keyframes fade-in-objects {
+  from {opacity:0;}
+  to {opacity:0.32;}
+}

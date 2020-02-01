@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Play|Righteous&display=swap');
+body {
+  background-color:#A8FFF8;
+}
+.header {
+  color:#00D1CE;
+  font-size:10vmax;
+  font-family: 'Righteous', cursive;
+  text-shadow: 8px 8px 0px #089C99;
+  text-align:center;
+  line-height:0;
+}
+.list-item {
+  font-family: 'Play', sans-serif;
+  list-style:none;
+  background-color:white;
+  width:22vmax;
+  height:2vmax;
+  border-radius:10px;
+  box-shadow: 8px 8px 0px #089C99;
+  text-align:center;
+  margin: 0.75vmax 0;
+
+}
+.list-item:hover {
+  text-decoration: line-through;
+}
+.list-container {
+  width:100%;
+  display:flex;
+  justify-content: center;
+}
+#todo-box {
+  top:10vmax;
+  width:20vmax;
+  height: 2vmax;
+  border-radius:10px;
+  border-style:solid;
+  border:1vmax;
+  border-color:#CAFAF9;
+  box-shadow: 20px 8px 0px #089C99;
+  padding-left:1vmax;
+}
+#submit-button {
+  width:10vmax;
+  height:2vmax;
+  border:none;
+  background-color:#10EFEB;
+  border-radius:10px;
+  box-shadow: 8px 8px 0px #089C99;
+}
+.fade {
+  animation-name:fade;
+  animation-duration:1s;
+}
+
+@keyframes fade {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+
+@media screen and (max-width:1000px){
+  .this-thing {
+    left:10vmax;
+  }
+};

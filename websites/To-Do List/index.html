@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="particles-js">
+    <h1 class="header fade">To-Do List</h1>
+      <div class="list-container fade">
+    <form id="todo">
+      <input id="todo-box" type="text" name="listItem" value="What's on your mind?">
+      <button id="submit-button" type="button" onclick="addListItem()">submit</button>
+    </form>
+  </div>
+  <div class="list-container">
+    <ul id="list">
+    </ul>
+  </div>
+  </div>
+  </body>
+  <script src="index.js" charset="utf-8"></script>
+</html>
