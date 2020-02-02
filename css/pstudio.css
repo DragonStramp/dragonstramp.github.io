@@ -96,7 +96,7 @@
   font-size:2vmax;
   font-family: 'Oswald', sans-serif;
   margin:auto;
-  transition-duration: 0.25s;
+  transition-duration: 1s;
 }
 .contact-btn:hover {
   background-color:RGBA(0,145,142,1);
