@@ -1,11 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 /* font-family: 'Roboto', ; */
 body {
   padding:0;
   margin:0;
 }
-
+/* NAVBAR */
 #navbar {
   display:flex;
   width:100%;
@@ -16,4 +17,36 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size:1vmax;
   color: #B1B1B1;
+  opacity:0.75;
+  transition-duration: 0.25s;
+}
+#nav-image {
+  height:4vmax;
+  transition-duration: 0.25s;
+  opacity:0.75;
+}
+.nav-text:hover {
+  opacity:1;
+  color:#032d3c;
+}
+#nav-image:hover {
+  opacity:1;
+}
+/* Body */
+.hero {
+  display:grid;
+  justify-content:flex-start
+  margin: 5vmax 0 0 5vmax;
+}
+.header-main {
+  color: #4be3ac;
+  font-size:6vmax;
+  font-family: 'Press Start 2P', serif;
+  margin: 0 auto 0 auto;
+}
+.header-sub {
+  color: #94fc13;
+  font-size:3.5vmax;
+  font-family: 'Press Start 2P', serif;
+  margin: 0 auto 0 auto;
 }
