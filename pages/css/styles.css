@@ -72,4 +72,8 @@ a {
   padding:auto 10vmax auto 8vmax;
   text-align:center;
 }
+.footer {
+  font-size:1vmax;
+  margin-bottom:1vmax;
+}
 /* parallax */
