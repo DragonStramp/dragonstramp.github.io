@@ -1,7 +1,12 @@
 @font-face {
-  font-family: "Heavy Equipment";
-  src: url('fonts/HeavyEquipment.ttf')
+    font-family: 'heavy_equipmentregular';
+    src: url('heavyequipment-webfont.woff2') format('woff2'),
+         url('heavyequipment-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Concert+One&family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 /* font-family: 'Patrick Hand', cursive; */
 #main-body {
@@ -30,7 +35,7 @@ body {
 }
 h1 {
   color:white;
-  font-family: "Heavy Equipment";
+  font-family: 'Righteous', cursive;
   font-size: 6vmax;
   text-align:center;
   line-height: 0;
