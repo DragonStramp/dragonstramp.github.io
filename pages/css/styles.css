@@ -1,13 +1,4 @@
-@font-face {
-    font-family: 'heavy_equipmentregular';
-    src: url('heavyequipment-webfont.woff2') format('woff2'),
-         url('heavyequipment-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Concert+One&family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nerko+One&family=Rubik&display=swap');
 /* font-family: 'Patrick Hand', cursive; */
 #main-body {
   /* background-color:#1E8875; */
@@ -17,16 +8,16 @@
 body {
   border:none;
   padding:none;
-  background-color:#1E8875;
+  background-color:#07473c;
   background-image: url("../images/Back2.png");
   background-attachment:fixed;
   background-size: cover;
+  text-align:center;
 }
 #page {
-  background-color:#566A8E;
+  background-color:#566a8e88;
   width: 50vmax;
   border-radius:50px;
-  /* height:50vmax; */
 }
 #second-body {
   display:flex;
@@ -35,7 +26,7 @@ body {
 }
 h1 {
   color:white;
-  font-family: 'Righteous', cursive;
+  font-family: 'Rubik', sans-serif;
   font-size: 6vmax;
   text-align:center;
   line-height: 0;
@@ -45,33 +36,33 @@ h1 {
 }
 p {
   color:white;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Rubik', sans-serif;
   text-align:center;
   font-size:1.5vmax;
   margin:auto 7vmax auto 7vmax;
 }
 a {
   color:white;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Rubik', sans-serif;
   text-align:center;
   font-size:1.5vmax;
-  margin:auto 7vmax auto 7vmax;
+  display:inline;
+  text-decoration: none;
 }
 #header {
   width:50vmax;
   border-radius:50px;
 }
 #trailer {
-  margin:auto 3vmax auto 8vmax;
   width:35vmax;
   height:20vmax;
+  margin-top: 50px;
 }
 #background {
   position:absolute;
   z-index: -1;
   opacity:0.1;
   height:260%;
-  100%;
 }
 #bandcamp {
   padding:auto 10vmax auto 8vmax;
@@ -80,5 +71,8 @@ a {
 .footer {
   font-size:1vmax;
   margin-bottom:1vmax;
+}
+hr {
+  width:25vmax;
 }
 /* parallax */
