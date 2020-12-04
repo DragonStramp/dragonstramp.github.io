@@ -1,60 +1,90 @@
-
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /* font-family: 'Roboto', ; */
+/* Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> */
+:root {
+  --yellow: #ffd369;
+  --white: #eeeeee;
+  --gray: #393e46;
+  --darkgray: #222831;
+}
 body {
-  padding:0;
-  margin:0;
-}
-/* NAVBAR */
-#navbar {
-  display:flex;
-  width:100%;
-  justify-content:center;
-}
-.nav-text {
-  margin: 1vmax 2vmax auto 2vmax;
-  font-family: 'Roboto', sans-serif;
-  font-size:1vmax;
-  color: #B1B1B1;
-  opacity:0.75;
-  transition-duration: 0.25s;
-}
-#nav-image {
-  height:4vmax;
-  transition-duration: 0.25s;
-  opacity:0.75;
-}
-.nav-text:hover {
-  opacity:1;
-  color:#032d3c;
-}
-#nav-image:hover {
-  opacity:1;
-}
-/* Body */
-.hero {
-  display:grid;
-  justify-content:flex-start
-  margin: 5vmax 0 0 5vmax;
-}
-.header-main {
-  color: #4be3ac;
-  font-size:6vmax;
-  font-family: 'Press Start 2P', serif;
-  margin: 0 auto 0 auto;
-}
-.header-sub {
-  color: #94fc13;
-  font-size:3.5vmax;
-  font-family: 'Press Start 2P', serif;
-  margin: 0 auto 0 auto;
-}
-.main-desc {
+  background-color: var(--darkgray);
   text-align: center;
 }
-.desc-header {
-  font-size: 2vmax;
+h1 {
+  font-size:100px;
+  color: var(--white);
   font-family: 'Roboto', sans-serif;
-  color: #B1B1B1;
+  line-height: 0;
+}
+h2 {
+  font-size: 25px;
+  color: var(--white);
+  font-family: 'Rubik', sans-serif;
+  margin-top:0;
+}
+a {
+  font-family: 'Roboto', sans-serif;
+  color: var(--gray);
+  font-size: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+  line-height: 75px;
+  margin-top: 10px;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+a:hover {
+  color: var(--white);
+  transition-duration: 0.25s;
+  text-decoration: solid;
+}
+
+h3 {
+  font-size: 40px;
+  color: var(--white);
+  font-family: 'Rubik', sans-serif;
+  text-align:left;
+  vertical-align: top;
+  line-height: 0;
+}
+p {
+  font-size: 25px;
+  color: var(--white);
+  font-family: 'Rubik', sans-serif;
+  text-align:left;
+  vertical-align: center;
+}
+hr {
+  height:5px;
+  border-width: 0;
+  background-color: var(--gray);
+  width:35%;
+}
+.long-hr {
+  height:5px;
+  border-width: 0;
+  background-color: var(--gray);
+  width:25%;
+}
+.icon {
+  width: 250px;
+  height: 250px;
+  display: relative;
+  float: left;
+  margin-right: 20px;
+}
+.description {
+  display: flex;
+  justify-content: center;
+}
+#particles-js {
+  position:absolute;
+  width: 95%;
+  height: 200%;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  opacity: 0.5;
 }
