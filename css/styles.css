@@ -42,7 +42,7 @@ a:hover {
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 2vmax;
   color: var(--white);
   font-family: 'Rubik', sans-serif;
   text-align:left;
@@ -50,7 +50,7 @@ h3 {
   line-height: 0;
 }
 p {
-  font-size: 25px;
+  font-size: 1.5vmax;
   color: var(--white);
   font-family: 'Rubik', sans-serif;
   text-align:left;
@@ -75,9 +75,37 @@ hr {
   float: left;
   margin-right: 20px;
 }
+.pic {
+  width: 250px;
+  height: 250px;
+  display: relative;
+  float: left;
+  margin-right: 20px;
+  border-radius: 10px;
+}
 .description {
   display: flex;
   justify-content: center;
+}
+.desc-link {
+  font-size: 1.5vmax;
+  color: var(--yellow);
+  font-family: 'Rubik', sans-serif;
+  text-align:left;
+  float: left;
+  vertical-align: center;
+  margin: 0;
+  display:inline;
+  line-height: 1px;
+  margin-right: 50px;
+}
+.game {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.inactive {
+  opacity: 0.3;
 }
 #particles-js {
   position:absolute;
