@@ -27,13 +27,14 @@ h2 {
 a {
   font-family: 'Roboto', sans-serif;
   color: var(--gray);
-  font-size: 30px;
+  font-size: 1.5vmax;
   margin-left: 25px;
   margin-right: 25px;
   line-height: 75px;
   margin-top: 10px;
   text-decoration: none;
   transition-duration: 0.25s;
+  cursor: pointer;
 }
 a:hover {
   color: var(--white);
@@ -74,6 +75,7 @@ hr {
   display: relative;
   float: left;
   margin-right: 20px;
+  margin-top:10px;
 }
 .pic {
   width: 12vmax;
@@ -98,17 +100,25 @@ hr {
   display:inline;
   line-height: 1px;
   margin-right: 50px;
+  cursor: pointer;
 }
 .game {
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
-.inactive {
-  opacity: 0.3;
-}
+
 .selected {
   color: var(--white);
+}
+#contact {
+  display: none;
+  position: absolute;
+  background-color: #626262;
+  width: 50vmax;
+  top: 1vmax;;
+  margin-left: 20%;
+  border-radius: 50px;
 }
 #particles-js {
   position: absolute;
