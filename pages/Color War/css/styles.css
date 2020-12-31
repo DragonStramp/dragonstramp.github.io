@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nerko+One&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 /* font-family: 'Patrick Hand', cursive; */
 #main-body {
   /* background-color:#1E8875; */
@@ -26,8 +26,8 @@ body {
 }
 h1 {
   color:white;
-  font-family: 'Rubik', sans-serif;
-  font-size: 6vmax;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 4vmax;
   text-align:center;
   line-height: 0;
   border:none;
@@ -42,7 +42,7 @@ p {
   margin:auto 7vmax auto 7vmax;
 }
 a {
-  color:white;
+  color:rgb(0, 234, 255);
   font-family: 'Rubik', sans-serif;
   text-align:center;
   font-size:1.5vmax;
@@ -74,5 +74,18 @@ a {
 }
 hr {
   width:25vmax;
+}
+#particles-js {
+  position: absolute;
+  width: 95%;
+  height: 200%;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+#devlog {
+  width:35vmax;
+  height:20vmax;
 }
 /* parallax */
