@@ -1,8 +1,7 @@
-var cnc = document.getElementById("contact");
-
-function closeContact() {
-    cnc.style.display = "none";
-}
-function bringUpContact() {
-    cnc.style.display = "block";
-}
+var wave = wavify( document.querySelector('#wave'), {
+    height: 60,
+    bones: 3,
+    amplitude: 40,
+    color: 'rgb(255, 95, 126, 1)',
+    speed: .25
+  })
