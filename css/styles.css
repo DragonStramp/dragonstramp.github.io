@@ -24,6 +24,12 @@ h2 {
   font-family: 'Rubik', sans-serif;
   margin-top:0;
 }
+h4 {
+  font-size: 1vmax;
+  color: var(--white);
+  font-family: 'Rubik', sans-serif;
+  margin-top:0;
+}
 a {
   font-family: 'Roboto', sans-serif;
   color: var(--gray);
