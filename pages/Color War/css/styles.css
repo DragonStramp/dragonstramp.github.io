@@ -32,13 +32,19 @@ h1 {
   line-height: 0;
   border:none;
   padding:none;
-  margin: 5vmax;
 }
 p {
   color:white;
   font-family: 'Rubik', sans-serif;
   text-align:center;
   font-size:1.5vmax;
+  margin:auto 7vmax auto 7vmax;
+}
+h3 {
+  color:white;
+  font-family: 'Rubik', sans-serif;
+  text-align:center;
+  font-size:2vmax;
   margin:auto 7vmax auto 7vmax;
 }
 a {
@@ -65,8 +71,9 @@ a {
   height:260%;
 }
 #bandcamp {
-  padding:auto 10vmax auto 8vmax;
-  text-align:center;
+  width: 100%;
+  padding-left: 12%;
+  padding-right: 12%;
 }
 .footer {
   font-size:1vmax;
@@ -87,5 +94,11 @@ hr {
 #devlog {
   width:35vmax;
   height:20vmax;
+}
+#links {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 /* parallax */

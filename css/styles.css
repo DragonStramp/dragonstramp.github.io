@@ -114,10 +114,10 @@ hr {
 #contact {
   display: none;
   position: absolute;
-  background-color: #626262;
-  width: 50vmax;
-  top: 1vmax;;
-  margin-left: 20%;
+  background-color: #c2c2c2;
+  width: 25vmax;
+  top: 5vmax;
+  margin-left: 37%;
   border-radius: 50px;
 }
 #particles-js {
