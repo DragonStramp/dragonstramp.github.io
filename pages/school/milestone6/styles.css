@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap');
+:root {
+    --dark-blue: #112b3c;
+    --blue: #205375;
+    --white: #efefef;
+    --orange: #f66b0e;
+    /*     color: var(--red); */
+}
+body {
+    margin: 0;
+    background-color: var(--dark-blue);
+}
+#wrapper {
+    display: grid;
+    grid-auto-rows: minmax(0px, auto);
+    grid-template-columns: minmax(0px, 1fr) repeat(5, minmax(0, 200px)) minmax(0px, 1fr);
+    grid-column-gap: 1rem;
+    height: 100%;
+}
+nav {
+    background-color: var(--dark-blue);
+    height: 4rem;
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.5rem;
+    transition-duration: 0.25s;
+}
+nav a:hover {
+    color: var(--orange);
+}
+header {
+    background-color: var(--white);
+    height: 25rem;
+    grid-column: 1 / -1;
+    text-align: center;
+}
+header h1 {
+    color: var(--orange);
+    font-size: 7rem;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+header h2 {
+    color: var(--blue);
+    font-size: 5rem;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    margin-top: -4rem;
+}
+section {
+    border-radius: 10px;
+    background-color: var(--blue);
+    height: 20rem;
+    grid-column: 2 / -4;
+    margin: 1rem 0;
+}
+section h1 {
+    color: var(--white);
+    font-family: 'Heebo', sans-serif;
+    font-size: 3rem;
+    padding: 0 2rem;
+    margin-bottom: 0;
+}
+section p {
+    color: var(--white);
+    font-family: 'Heebo', sans-serif;
+    font-size: 1.5rem;
+    padding: 0 2rem;
+    margin-top: 0;
+}
+section a {
+    color: var(--blue);
+    font-family: 'Heebo', sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--white);
+    border-radius: 10px;
+    margin: 0 2rem;
+    padding: 3px 10px;
+    transition-duration: 0.25s;
+}
+section a:hover {
+    background-color: var(--orange);
+    color: var(--white);
+}
+.middle-section a {
+    color: var(--white);
+    font-family: 'Heebo', sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: transparent;
+    /* border-radius: 10px; */
+    margin: 0 2rem;
+    padding: 3px 10px;
+    transition-duration: 0.25s;
+    display: block;
+    text-align: center;
+}
+.middle-section h1 {
+    text-align: center;
+}
+.right-section {
+    grid-column: 4 / -2;
+}
+.middle-section {
+    grid-column: 3 / -3;
+    height: auto;
+}
+aside {
+    border-radius: 10px;
+    background-color: rgba(19, 224, 139, 0.336);
+    height: 20rem;
+    grid-column: 5 / -2;
+    margin: 1rem 0;
+}
+.left-image {
+    grid-column: 2 / -5;
+}
+footer {
+    grid-column: 1 / -1;
+    background-color: var(--white);
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+footer a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1rem;
+}
+iframe {
+    display: block;
+    grid-column: 2 / -2;
+    height: 30vmax;
+    width: 50vmax;
+    margin: 1rem 2rem;
+}
+#the-fire {
+    background-image: url(images/the-fire.png);
+    background-size: cover;
+}
+#color-war {
+    background-image: url(images/color-war.png);
+    background-size: cover;
+}
+#little-shell {
+    background-image: url(images/little-shell.png);
+    background-size: cover;
+}
+
+@media only screen and (max-width:992px) {
+    aside {
+        display: none;
+    }
+    section {
+        grid-column: 2 / -2;
+        text-align: center;
+    }
+    .right-section {
+        grid-column: 2 / -2;
+    }
+}
+@media only screen and (max-width:768px) {
+    section {
+        grid-column: 2 / -2;
+        text-align: center;
+        height: 15rem;
+    }
+    section h1 {
+        font-size: 2rem;
+    }
+    section p {
+        font-size: 1rem;
+    }
+    .right-section {
+        grid-column: 2 / -2;
+    }
+    nav a {
+        font-size: 1.25rem;
+    }
+}
+@media only screen and (max-width: 359px) {
+    section {
+        background-color: var(--dark-blue);
+    }
+    header {
+        background-color: var(--dark-blue);
+        height: auto;
+        width: auto;
+    }
+    header h1 {
+        color: var(--white);
+    }
+    header h2 {
+        color: var(--white);
+    }
+}
