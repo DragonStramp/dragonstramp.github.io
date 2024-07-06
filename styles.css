@@ -57,6 +57,11 @@ aside {
     grid-column: 3 / -3;
     text-align: center;
 }
+
+.one {
+    height: 0px;
+    width: 0px
+}
 #top-link {
     font-family: 'Poppins', sans-serif;
     color: var(--sub-header);
