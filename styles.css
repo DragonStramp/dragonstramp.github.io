@@ -164,3 +164,12 @@ article div p {
     margin: 0;
     padding: 0 1rem 0 1rem;
 }
+
+@media screen and (max-width: 650px) {
+    .cards {
+        grid-column: 1 / -1;
+    }
+    .cards-right {
+        grid-column: 1 / -1;
+    }
+}
