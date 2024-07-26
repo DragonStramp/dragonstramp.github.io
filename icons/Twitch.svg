@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><style>.cls-1{fill:#6d9886;}</style></defs><path class="cls-1" d="M11.17,2.88l-6.25,15.99V84.48H27.22v12.64h12l13.17-11.99h18l24.69-24.39V2.88H11.17ZM87.09,55.65l-14.48,15h-22.61l-11.96,11.87v-12.13H19.52V11.04H87.09V55.65Z"/><rect class="cls-1" x="41.96" y="27.48" width="8.04" height="24.91"/><rect class="cls-1" x="64.54" y="27.48" width="8.04" height="24.91"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M11.2,2.9l-6.2,16v65.6h22.3v12.6h12l13.2-12h18l24.7-24.4V2.9H11.2ZM87.1,55.7l-14.5,15h-22.6l-12,11.9v-12.1h-18.5V11h67.6v44.6Z"/>
+  <rect class="cls-1" x="42" y="27.5" width="8" height="24.9"/>
+  <rect class="cls-1" x="64.5" y="27.5" width="8" height="24.9"/>
+</svg>

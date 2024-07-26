@@ -1,11 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-    --background: #F7F7F7;
+    --background: #F8EDED;
+    --background-two: rgb(214, 214, 214);
+    --header: #173B45;
+    --sub-header: #FF8225;
+    --button-pressed: #B43F3F;
+/* 
+    --background: #F9F9E0;
+    --background-two: #ebebd5;
+    --header: #3AA6B9;
+    --sub-header: #FF9EAA;
+    --button-pressed: #DA7297; */
+
+    /* --background: #F7F7F7;
     --background-two: #e4e4e4;
     --header: #393E46;
     --sub-header: #6D9886;
-    --button-pressed: #1E678F;
+    --button-pressed: #1E678F; */
 }
 
 body {
@@ -62,6 +74,10 @@ aside {
     height: 0px;
     width: 0px
 }
+hr {
+    border: 2px solid var(--header);
+    width: 60%;
+}
 #top-link {
     font-family: 'Poppins', sans-serif;
     color: var(--sub-header);
@@ -77,16 +93,32 @@ aside {
 .social {
     width: 2.5rem;
     transition-duration: 0.25s;
+    /* Green */
+    /* filter: invert(56%) sepia(26%) saturate(334%) hue-rotate(103deg) brightness(96%) contrast(91%); */
+    /* Orange */
+    filter: invert(70%) sepia(54%) saturate(4904%) hue-rotate(343deg) brightness(104%) contrast(101%);
+    /* Pink */
+    /* filter: invert(87%) sepia(20%) saturate(5366%) hue-rotate(297deg) brightness(110%) contrast(101%); */
 }
 .social:hover {
-    filter: brightness(0) saturate(100%) invert(34%) sepia(18%) saturate(2015%) hue-rotate(157deg) brightness(95%) contrast(88%);
+    /* Green */
+    /* filter: brightness(0) saturate(100%) invert(34%) sepia(18%) saturate(2015%) hue-rotate(157deg) brightness(95%) contrast(88%);
+    /* red */
+    filter: invert(24%) sepia(85%) saturate(1250%) hue-rotate(331deg) brightness(98%) contrast(84%);
+    /* pink */
+    /* filter: invert(75%) sepia(19%) saturate(3368%) hue-rotate(294deg) brightness(88%) contrast(93%); */
+    
+
 }
 iframe {
     width: 35vmax;
     height: 20vmax;
     box-shadow: 10px 10px 5px 1px rgba(186,186,186,0.56);
 }
-
+/* Blog Posts */
+.blog-posts {
+    grid-column: 3 / -3;
+}
 /* Cards */
 .cards {
     grid-column: 3 / -5;
