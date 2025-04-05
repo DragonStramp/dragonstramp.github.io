@@ -6,6 +6,15 @@
     --header: #173B45;
     --sub-header: #ffe668;
     --button-pressed: #ffd900;
+
+    
+    --background: #272727;
+    --background-two: #3c3c3c;
+    --header: #8f8f8f;
+    --sub-header: #696969;
+    --button-pressed: #5a5a5a;
+    --box-border: #454545;
+    --text-color: #8f8f8f;
 }
 
 body {
@@ -43,10 +52,16 @@ input {
     background-color: #ffffff00;
     border-width: 1px;
     border-style: solid;
-    border-color: #c3c3c3;
+    border-color: var(--box-border);
+    color: var(--text-color)
 }
 div {
     width: 100%;
+    border-color: var(--box-border);
+    color: var(--text-color);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
 }
 h2 {
     font-family: 'Poppins', sans-serif;

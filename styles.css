@@ -7,17 +7,11 @@
     --sub-header: #FF8225;
     --button-pressed: #B43F3F;
 /* 
-    --background: #F9F9E0;
-    --background-two: #ebebd5;
-    --header: #3AA6B9;
-    --sub-header: #FF9EAA;
-    --button-pressed: #DA7297; */
-
-    /* --background: #F7F7F7;
-    --background-two: #e4e4e4;
-    --header: #393E46;
-    --sub-header: #6D9886;
-    --button-pressed: #1E678F; */
+    --background: #00224D;
+    --background-two: #5D0E41;
+    --header: #FF204E;
+    --sub-header: #FF204E;
+    --button-pressed: #A0153E; */
 }
 
 body {
