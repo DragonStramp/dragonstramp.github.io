@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Generator</title>
+    <link rel="icon" href="icons/player.ico">
+    <link rel="stylesheet" href="ticket.css">
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>The Problem</h2>
+    <div id="editor"></div>
+    
+    <h2>What Changed</h2>
+    <div id="editor2"></div>
+
+    <h2>Snippet<input onclick="snipToggle()" id="snipcheck" type="checkbox"></h2>
+    <div class="snippet" id="snippeteditor"></div>
+
+    
+    <h2>Follow Up<input onclick="followUpToggle()" id="fucheck" type="checkbox"></h2>
+    <h3 class="fu">Name</h3>
+    <input class="fu" id="nametext" type="text">
+    <h3 class="fu">Number</h3>
+    <input class="fu" id="numbertext" type="text">
+    <h3 class="fu">Reason</h3>
+    <div class="fu" id="fueditor"></div>
+    <a class="button" onclick="SaveToClipboard()">Copy</a>
+    <div id="finishededitor"></div>
+    <a target="_blank" href="ticket.html" class="button">New</a>
+    
+
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+<script src="ticket.js"></script>
+</body>
+</html>
