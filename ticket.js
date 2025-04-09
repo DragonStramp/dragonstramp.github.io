@@ -55,35 +55,30 @@ const quill = new Quill('#editor', {
     modules: {
     toolbar: false
     },
-    // theme: 'snow'
   });
 
   const quill2 = new Quill('#editor2', {
     modules: {
     toolbar: false
     },
-    // theme: 'snow'
   });
   
   const snippeteditor = new Quill('#snippeteditor', {
     modules: {
     toolbar: false
     },
-    // theme: 'snow'
   });
 
   const fueditor = new Quill('#fueditor', {
     modules: {
     toolbar: false
     },
-    // theme: 'snow'
   });
 
   const finishededitor = new Quill('#finishededitor', {
     modules: {
     toolbar: false
     },
-    // theme: 'snow'
   });
 
 function SaveToClipboard() {
