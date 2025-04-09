@@ -32,6 +32,12 @@ h1 {
     text-align: center;
     margin: 0;
 }
+hr {
+    width: 20rem;
+    height: 2px;
+    border-style: none;
+    background-color: var(--header);
+}
 h2 {
     font-family: 'Poppins', sans-serif;
     color: var(--header);

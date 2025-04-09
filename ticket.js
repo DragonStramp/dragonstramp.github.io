@@ -24,13 +24,21 @@ function followUpToggle()
 
 function CopyAuthPin()
 {
-  var emailText = "Hello, \n In recent communications with our support team, an authorization pin for your Mango Voice account was requested. \n \n Authorization Pin: " + document.getElementById("nametext").value + "\n \n This pin is necessary for any Mango Voice support agents to make changes to your account. \n Thank you, \n Mango Voice Support.";
+  var emailText = "Hello, \n In recent communications with our support team, a copy of the authorization pin for your Mango Voice account was requested. \n \n Authorization Pin: " + document.getElementById("nametext").value + "\n \n This pin is necessary for any Mango Voice support agents to make changes to your account. \n Thank you, \n Mango Voice Support.";
   navigator.clipboard.writeText(emailText);
 }
 function CopyPasswordLink()
 {
   var emailText = "Hello, \n In recent communications with our support team, a password link was requested to access your Mango Voice account. After setting up your password with the link below, you'll be able to log in using the following information: \n \n Username: " + document.getElementById("username").value + "\n Password Link: " + document.getElementById("resetlink").value + "\n \n Thank you, \n Mango Voice Support.";
   navigator.clipboard.writeText(emailText);
+}
+function CopyProvLink()
+{
+  navigator.clipboard.writeText("http://profiler.mangovoice.com/profiler/yealink/");
+}
+function CopyConfLink() 
+{
+  navigator.clipboard.writeText("http://profiler.mangovoice.com/profiler/yealink/" + document.getElementById("mac").value + ".cfg");
 }
 
 function snipToggle()
@@ -87,7 +95,7 @@ function SaveToClipboard() {
 
     document.getElementById("finishededitor").style.display = "block";
     finishededitor.setContents([
-        {insert: "Call Log: \n \n"},
+        {insert: ""},
       ])
       
     if(followupCheck.checked == true)
