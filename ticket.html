@@ -9,28 +9,30 @@
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 </head>
 <body>
-    <h2>Why They Called:</h2>
-    <div id="editor"></div>
-    
-    <h2>What I Did:</h2>
-    <div id="editor2"></div>
+    <section>
+        <h2>Why They Called:</h2>
+        <div id="editor"></div>
+        <h2>What I Did:</h2>
+        <div id="editor2"></div>
+        <h2>Notes:</h2>
+        <h3>Include notes in ticket?<input id="notecheck" type="checkbox"></h3>
+        <div id="notestext"></div>
+        <h2>Snippet<input onclick="snipToggle()" id="snipcheck" type="checkbox"></h2>
+        <div class="snippet" id="snippeteditor"></div>
+        <h2>Follow Up<input onclick="followUpToggle()" id="fucheck" type="checkbox"></h2>
+        <h3 class="fu">Name (Optional)</h3>
+        <input class="fu" id="nametext" type="text">
+        <h3 class="fu">Number (Optional)</h3>
+        <input class="fu" id="numbertext" type="text">
+        <h3 class="fu">Reason</h3>
+        <div class="fu" id="fueditor"></div>
+        <hr>
+        <a class="button" id="copy" onclick="SaveToClipboard()">Copy</a>
+        <div id="finishededitor"></div>
+        <a href="ticket.html" class="button">New</a>
+        <a href="tools.html" class="button">Tools</a>
 
-    <h2>Snippet<input onclick="snipToggle()" id="snipcheck" type="checkbox"></h2>
-    <div class="snippet" id="snippeteditor"></div>
-
-    
-    <h2>Follow Up<input onclick="followUpToggle()" id="fucheck" type="checkbox"></h2>
-    <h3 class="fu">Name (Optional)</h3>
-    <input class="fu" id="nametext" type="text">
-    <h3 class="fu">Number (Optional)</h3>
-    <input class="fu" id="numbertext" type="text">
-    <h3 class="fu">Reason</h3>
-    <div class="fu" id="fueditor"></div>
-    <a class="button" onclick="SaveToClipboard()">Copy</a>
-    <div id="finishededitor"></div>
-    <a target="_blank" href="ticket.html" class="button">New</a>
-    
-
+    </section>
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 <script src="ticket.js"></script>
 </body>
