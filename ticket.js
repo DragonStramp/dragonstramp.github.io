@@ -34,11 +34,9 @@ function CopyPasswordLink()
 }
 function CopyProvLink()
 {
-  navigator.clipboard.writeText("http://profiler.mangovoice.com/profiler/yealink/");
 }
 function CopyConfLink() 
 {
-  navigator.clipboard.writeText("http://profiler.mangovoice.com/profiler/yealink/" + document.getElementById("mac").value + ".cfg");
 }
 
 function snipToggle()
