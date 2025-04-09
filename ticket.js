@@ -87,39 +87,34 @@ const quill = new Quill('#editor', {
   });
 
 function SaveToClipboard() {
-
-    var currentdate = new Date(); 
-    var datetime = currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear();
-
     document.getElementById("finishededitor").style.display = "block";
     finishededitor.setContents([
         {insert: ""},
       ])
-      
-    if(followupCheck.checked == true)
-    {
-        finishededitor.insertText(finishededitor.getLength(), 'Follow Up Reason:\n', 'bold', true);
-        finishededitor.insertText(finishededitor.getLength(), fueditor.getText() + "\n");
-        if(nameText.value != "")
-        {
-          finishededitor.insertText(finishededitor.getLength(), 'FU Name: ' + nameText.value + "\n");
-        }
-        if(numberText.value != "")
-        {
-          finishededitor.insertText(finishededitor.getLength(), 'FU Number: ' + numberText.value + "\n \n");
-        }
-    }
 
-    finishededitor.insertText(finishededitor.getLength(), 'Why They Called:\n', 'bold', true);
-    finishededitor.insertText(finishededitor.getLength(), quill.getText() + "\n \n");
-    finishededitor.insertText(finishededitor.getLength(), 'What I Did:\n', 'bold', true);
-    finishededitor.insertText(finishededitor.getLength(), quill2.getText() + "\n \n");
 
     if(snipCheck.checked == true)
-    {
-        finishededitor.insertText(finishededitor.getLength(), 'Snippet:\n', 'bold', true);
-        finishededitor.insertText(finishededitor.getLength(), snippeteditor.getText() + "\n");
-    }
+      {
+        finishededitor.insertText(0, snippeteditor.getText() + "\n");
+        finishededitor.insertText(0, 'Snippet:\n', 'bold', true);
+      }
+
+      finishededitor.insertText(0, quill2.getText() + "\n \n");
+      finishededitor.insertText(0, 'What I Did:\n', 'bold', true);
+      finishededitor.insertText(0, quill.getText() + "\n \n");
+      finishededitor.insertText(0, 'Why They Called:\n', 'bold', true);
+
+      if(followupCheck.checked == true)
+        {
+          if(numberText.value != "")
+            {
+              finishededitor.insertText(0, 'FU Number: ' + numberText.value + "\n \n");
+            }
+          if(nameText.value != "")
+            {
+              finishededitor.insertText(0, 'FU Name: ' + nameText.value + "\n");
+            }
+          finishededitor.insertText(0, fueditor.getText() + "\n");
+          finishededitor.insertText(0, 'Follow Up Reason:\n', 'bold', true);
+        }
 }
