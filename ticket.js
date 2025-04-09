@@ -88,13 +88,13 @@ function SaveToClipboard() {
 
     if(snipCheck.checked == true)
       {
-        finishededitor.insertText(0, snippeteditor.getText() + "\n", 'normal', true);
+        finishededitor.insertText(0, snippeteditor.getText() + "\n", 'bold', false);
         finishededitor.insertText(0, 'Snippet:\n', 'bold', true);
       }
 
-      finishededitor.insertText(0, quill2.getText() + "\n \n", 'normal', true);
+      finishededitor.insertText(0, quill2.getText() + "\n \n", 'bold', false);
       finishededitor.insertText(0, 'What I Did:\n', 'bold', true);
-      finishededitor.insertText(0, quill.getText() + "\n \n", 'normal', true);
+      finishededitor.insertText(0, quill.getText() + "\n \n", 'bold', false);
       finishededitor.insertText(0, 'Why They Called:\n', 'bold', true);
 
       if(followupCheck.checked == true)
@@ -107,7 +107,7 @@ function SaveToClipboard() {
             {
               finishededitor.insertText(0, 'FU Name: ' + nameText.value + "\n");
             }
-          finishededitor.insertText(0, fueditor.getText() + "\n", 'normal', true);
+          finishededitor.insertText(0, fueditor.getText() + "\n", 'bold', false);
           finishededitor.insertText(0, 'Follow Up Reason:\n', 'bold', true);
         }
 }
