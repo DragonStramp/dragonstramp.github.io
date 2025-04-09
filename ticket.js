@@ -102,8 +102,14 @@ function SaveToClipboard() {
     {
         finishededitor.insertText(finishededitor.getLength(), 'Follow Up Reason:\n', 'bold', true);
         finishededitor.insertText(finishededitor.getLength(), fueditor.getText() + "\n");
-        finishededitor.insertText(finishededitor.getLength(), 'FU Name: ' + nameText.value + "\n");
-        finishededitor.insertText(finishededitor.getLength(), 'FU Number: ' + numberText.value + "\n \n");
+        if(nameText.value != "")
+        {
+          finishededitor.insertText(finishededitor.getLength(), 'FU Name: ' + nameText.value + "\n");
+        }
+        if(numberText.value != "")
+        {
+          finishededitor.insertText(finishededitor.getLength(), 'FU Number: ' + numberText.value + "\n \n");
+        }
     }
 
     finishededitor.insertText(finishededitor.getLength(), 'Why They Called:\n', 'bold', true);
