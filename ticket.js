@@ -101,11 +101,11 @@ function SaveToClipboard() {
         {
           if(numberText.value != "")
             {
-              finishededitor.insertText(0, 'FU Number: ' + numberText.value + "\n \n");
+              finishededitor.insertText(0, 'FU Number: ' + numberText.value + "\n \n", 'bold', false);
             }
           if(nameText.value != "")
             {
-              finishededitor.insertText(0, 'FU Name: ' + nameText.value + "\n");
+              finishededitor.insertText(0, 'FU Name: ' + nameText.value + "\n", 'bold', false);
             }
           finishededitor.insertText(0, fueditor.getText() + "\n", 'bold', false);
           finishededitor.insertText(0, 'Follow Up Reason:\n', 'bold', true);
