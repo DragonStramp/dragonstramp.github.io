@@ -23,6 +23,14 @@ function followUpToggle()
     }
 }
 
+function NewPage()
+{
+    if(confirm("Clear the current ticket?"))
+    {
+        location.reload();
+    }
+}
+
 function CopyAuthPin()
 {
   var emailText = "Hello, \n In recent communications with our support team, a copy of the authorization pin for your Mango Voice account was requested. \n \n Authorization Pin: " + document.getElementById("nametext").value + "\n \n This pin is necessary for any Mango Voice support agents to make changes to your account. \n Thank you, \n Mango Voice Support.";
