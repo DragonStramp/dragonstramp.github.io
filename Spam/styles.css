@@ -1,0 +1,176 @@
+:root {
+    --outline: #aaaaaa;
+    --textcolor: #202020;
+    --windowbackground: #f0ebd6;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-image: url("images/background3.png");
+    background-size: cover;
+}
+
+.smallpopup {
+    border: medium ridge var(--outline);
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+    background-color: var(--windowbackground);
+}
+.mediumpopup {
+    border: medium ridge var(--outline);
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+    background-color: var(--windowbackground);
+}
+.largepopup {
+    border: medium ridge var(--outline);
+    width: 35rem;
+    top: 5rem;
+    position: absolute;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.1);
+    background-color: var(--windowbackground);
+    animation-name: zoomin;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(10, end), ease-in;
+    text-align: center;
+}
+
+.topup {
+    border-bottom: medium ridge var(--outline);
+    background: linear-gradient(0deg, rgb(9, 75, 255) 0%, rgb(88, 155, 255) 70%, rgb(167, 223, 255) 100%);
+    display: flex;
+    justify-content:space-between;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12) inset;
+}
+
+.windowbuttons {
+    display: flex;
+}
+
+#toolbar {
+    position: absolute;
+    bottom: 0;
+    height: 2.25rem;
+    width: 100%;
+    border-top: medium ridge var(--outline);
+    background: linear-gradient(0deg, rgb(9, 75, 255) 0%, rgb(88, 155, 255) 90%, rgb(167, 223, 255) 100%);
+    display: flex;
+    justify-content: flex-start;
+}
+#menubutton {
+    margin: 0;
+    border: medium ridge var(--outline);
+    color: white;
+    border-top: none;
+    background: linear-gradient(90deg, rgb(9, 162, 19) 0%, rgb(64, 233, 80) 48%, rgb(167, 255, 185) 100%);
+    text-align: left;
+    padding-left: 1rem;
+    font-size: 1.35rem;
+    width: 15rem;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#menubutton:hover {
+    background: linear-gradient(90deg, rgb(7, 115, 14) 0%, rgb(37, 144, 48) 48%, rgb(100, 154, 111) 100%);
+}
+
+#time {
+    margin: 0;
+    border-left: medium ridge var(--outline);
+    color: white;
+    text-align: right;
+    right: 0;
+    height: 100%;
+    font-size: 1.35rem;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.toolbarbuttons {
+    margin: 0;
+    border: medium ridge var(--outline);
+    border-top: none;
+    background: linear-gradient(0deg, rgb(9, 75, 255) 0%, rgb(88, 155, 255) 90%, rgb(167, 223, 255) 100%);
+    color: white;
+    text-align: left;
+    padding-left: 1rem;
+    font-size: 1.35rem;
+    width: 15rem;
+    cursor: pointer;
+    transition-duration: 0.15s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.toolbarbuttons:hover {
+    background: linear-gradient(0deg, rgb(6, 50, 170) 0%, rgb(45, 91, 159) 90%, rgb(83, 122, 145) 100%);
+}
+
+.insetbutton {
+    margin: auto;
+    border: medium ridge var(--outline);
+    background: linear-gradient(0deg, rgb(169, 9, 255) 0%, rgb(255, 88, 216) 90%, rgb(255, 167, 205) 100%);
+    color: white;
+    text-align: center;
+    font-size: 1.35rem;
+    width: 15rem;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 1rem;
+}
+
+.insetbutton:hover {
+    background: linear-gradient(0deg, rgb(68, 1, 103) 0%, rgb(110, 20, 89) 90%, rgb(120, 46, 78) 100%);
+}
+
+.textbutton {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-left: medium ridge var(--outline);
+    color: white;
+    text-align: center;
+    width:1rem;
+    font-style: oblique;
+    cursor: pointer;
+}
+
+.windowtext {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    border-right: medium ridge var(--outline);
+    font-style: oblique;
+    color: white;
+}
+
+.rainbow {
+    animation: rainbowtext 2s infinite;
+}
+
+@keyframes zoomin {
+    0% {bottom: 0; width: 0; height: 0;}
+}
+@keyframes appear {
+    0% {display: none;}
+}
+@keyframes rainbowtext {
+    0% {color: white;}
+    20% {color: rgb(255, 0, 0);}
+    40% {color: rgb(255, 247, 0);}
+    50% {color: rgb(0, 255, 98);}
+    60% {color: rgb(0, 255, 247);}
+    100% {color: white;}
+}
