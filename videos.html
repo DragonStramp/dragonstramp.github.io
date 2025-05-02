@@ -2,39 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>stramp - Videos</title>
-    <meta name="description" content="A set of videos edited/produced by stramp">
-    <meta name="keywords" content="youtube, devlogs, video portfolio, editor, freelance, daegon stam, stramp, dragon stramp">
+    <title>Stramp - Homepage</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="icons/player.ico">
+    <link rel="stylesheet" href="crt.css">
 </head>
-<body>
-    <main>
-        <section>
-            <a id="top-link" href="index.html">stramp</a>
-            <h2>Makes Videos</h2>
+<body class="crt">
+
+    <div class="largepopup">
+        <section class="topup">
+            <p class="windowtext">Congratulations Visitor!</p>
+            <div class="windowbuttons">
+                <p class="textbutton">-</p>
+                <p class="textbutton">X</p>
+            </div>
         </section>
-        <section class="videos">
-            <iframe src="https://www.youtube.com/embed/qJkjXijLUFI" title="I Made AI Slimes Race... Then Gave Them Emotions." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <hr>
-            <iframe src="https://www.youtube.com/embed/C7iIdGwklBk" title="I Added an Impossible Jump to my Game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <hr>
-        </section>
-        <section class="videos">
-            <iframe src="https://youtube.com/embed/iOGfMxM_xN8" title="How we made a demo of our Indie Platformer Game..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <hr>
-            <iframe src="https://youtube.com/embed/RRm20PwUvW4" title="Game Dev Didn't Use a Computer for 2 Years Then Made This..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <hr>
-        </section>
-        <aside>
-            <a target="_blank" href="https://youtube.com/@plasmastudios"><img class="social" src="icons/Youtube.svg" alt="youtube-icon"></a>
-            <a target="_blank" href="https://www.twitch.tv/stramp11"><img class="social" src="icons/Twitch.svg" alt="twitch-icon"></a>
-            <a target="_blank" href="https://gamejolt.com/@stramp/games"><img class="social" src="icons/Gamejolt.svg" alt="gamejolt-icon"></a>
-            <img class="one" src="images/Adra_2_finaljjkk.png" alt="">
-            <a target="_blank" href="https://store.steampowered.com/search/?developer=stramp"><img class="social" src="icons/Steam.svg" alt="steam-icon"></a>
-        </aside>
-    </main>
+        <h1 class="rainbow">Here's some cool videos check em out</h1>
+        <h2 class="rainbow">They're kinda recent too so that's cool</h2>
+        <iframe src="https://www.youtube.com/embed/qJkjXijLUFI" title="I Made AI Slimes Race... Then Gave Them Emotions." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div id="gamesbox1">
+        <!-- The Fire -->
+        <div class="mediumpopup">
+            <section class="topup">
+                <p class="windowtext">Fred's video!</p>
+                <div class="windowbuttons">
+                    <p class="textbutton">-</p>
+                    <p class="textbutton">X</p>
+                </div>
+            </section>
+            <h1>game with an AI boss</h1>
+            <iframe src="https://www.youtube.com/embed/aPKBfwp27wQ" title="I made a game where you work for A.I." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>(made in 7 days!!)</p>
+        </div>
+        <!-- Color War -->
+        <div class="mediumpopup">
+            <section class="topup">
+                <p class="windowtext">Throw Bro!</p>
+                <div class="windowbuttons">
+                    <p class="textbutton">-</p>
+                    <p class="textbutton">X</p>
+                </div>
+            </section>
+            <h1 class="rainbow">Our last throw bro devlog...</h1>
+            <iframe src="https://www.youtube.com/embed/C7iIdGwklBk" title="I Added an Impossible Jump to my Game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <!-- Fred's -->
+        <div class="mediumpopup">
+            <section class="topup">
+                <p class="windowtext">Slime Races</p>
+                <div class="windowbuttons">
+                    <p class="textbutton">-</p>
+                    <p class="textbutton">X</p>
+                </div>
+            </section>
+            <p>slime races slime races ai slime races</p>
+            <iframe src="https://www.youtube.com/embed/yBjj5VtQYts" title="I Made A.I. Slimes Race for 30 Minutes to see the Winner..." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h1>30 minutes of AI slime races</h1>
+        </div>
+    </div>
+
+    <footer id="toolbar">
+        <h1 onclick="window.location.href='index.html'" id="menubutton"><img src="" alt="">Home</h1>
+        <h1 onclick="window.location.href='games.html'"class="toolbarbuttons">Games</h1>
+        <h1 onclick="window.location.href='videos.html'"class="pressedbutton">Videos</h1>
+        <!-- <h1 class="toolbarbuttons">Web Dev</h1> -->
+        <h1 id="time">11:07 AM</h1>
+    </footer>
+    <script src="index.js"></script>
 </body>
 </html>
