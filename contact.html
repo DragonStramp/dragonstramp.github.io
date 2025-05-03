@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stramp - Homepage</title>
+    <meta name="description" content="Home page for Stramp, indie game dev and freelance web developer. Click please...">
+    <meta name="keywords" content="web development, game development, indie dev, game dev, web dev">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/crt.css">
+    <link rel="icon" href="images/icon.ico">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+              publicKey: "gJDQQqha-ANR4gl_K",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                document.getElementById('contact-form').style.display = "none";
+                document.getElementById('submitted').style.display = "block";
+                event.preventDefault();
+                emailjs.sendForm('contact_service', 'template_k6jm1nn', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+<body class="crt">
+    <div class="largepopup">
+        <section class="topup">
+            <p class="windowtext">Congratulations Visitor!</p>
+            <div class="windowbuttons">
+                <p class="textbutton">-</p>
+                <p class="textbutton">X</p>
+            </div>
+        </section>
+        <h1 onclick="submitContact()">Want a website? Want some game dev?</h1>
+        <h2 class="rainbow">This is the right place! Hit me up and let's talk about your project</h2>
+        <hr>
+        <form id="contact-form">
+            <!-- To simplify the tutorial, the value is static. -->
+            <input type="hidden" name="time" value="Mar 10 2025 08:46">
+            <label>Your Name</label>
+            <input type="text" name="name" required>
+            <br>
+            <label>Your Email</label>
+            <input type="email" name="email" required>
+            <br>
+            <label>Contact Reason</label>
+            <input type="text" name="title" required>
+            <br>
+            <label>Message</label>
+            <textarea name="message" required></textarea>
+            <br>
+            <input type="submit" value="Send">
+        </form>
+        <h1 id="submitted">Sent! I'll get back asap ;)</h1>
+        <!-- <h1 class="insetbutton">Development</h1> -->
+    </div>
+    <footer id="toolbar">
+        <h1 onclick="window.location.href='index.html'" id="menubutton"><img src="" alt="">Home</h1>
+        <h1 onclick="window.location.href='games.html'"class="toolbarbuttons">Games</h1>
+        <h1 onclick="window.location.href='videos.html'"class="toolbarbuttons">Videos</h1>
+        <h1 onclick="window.location.href='contact.html'"class="pressedbutton">Contact</h1>
+        <!-- <h1 class="toolbarbuttons">Web Dev</h1> -->
+        <h1 id="time">11:07 AM</h1>
+    </footer>
+    <script src="css/index.js"></script>
+</body>
+</html>

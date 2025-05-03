@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --background: #ffffff;
+    --background-two: rgb(255, 253, 225);
+    --header: #173B45;
+    --sub-header: #ffe668;
+    --button-pressed: #ffd900;
+
+    
+    --background: #272727;
+    --background-two: #2e2e2e;
+    --header: #8f8f8f;
+    --sub-header: #696969;
+    --button-pressed: #5a5a5a;
+    --box-border: #454545;
+    --text-color: #8f8f8f;
+}
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(160deg, var(--background) 50%, var(--background-two) 50%);
+    background-attachment: fixed;
+}
+section {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--header);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+hr {
+    width: 100%;
+    height: 2px;
+    border-style: none;
+    background-color: var(--box-border);
+}
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--header);
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--header);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+input {
+    background-color: #ffffff00;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--box-border);
+    color: var(--text-color)
+}
+div {
+    width: 100%;
+    border-color: var(--box-border);
+    color: var(--text-color);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+}
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--header);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+}
+.button {
+    text-decoration: none;
+    color: var(--background);
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 0.5rem;
+    border-radius: 10px;
+    background-color: var(--sub-header);
+    padding: 0.5rem;
+    display: block;
+    transition-duration: 0.25s;
+    width: 20%;
+    text-align: center;
+}
+.button:hover {
+    background-color: var(--button-pressed);
+    cursor: pointer;
+}
+.buttonpressed {
+    text-decoration: none;
+    color: var(--background);
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 0.5rem;
+    border-radius: 10px;
+    background-color: var(--sub-header);
+    padding: 0.5rem;
+    display: block;
+    transition-duration: 0.25s;
+    width: 20%;
+    text-align: center;
+    animation-name: bp;
+    animation-duration: 0.25s;
+    animation-direction: normal;
+}
+.buttonpressed:hover {
+    background-color: var(--button-pressed);
+    cursor: pointer;
+}
+@keyframes bp {
+    0% {width: 20%; background-color: var(--sub-header);}
+    50% {width: 18%; background-color: var(--button-pressed);}
+    100% {width: 20%; background-color: var(--sub-header);}
+}
+
+#finishededitor {
+    display: none;
+}
+
+.fu {
+    display: none;
+}
+.snippet {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+  section {
+    width: 90%;
+  }
+}
