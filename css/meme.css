@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+body {
+    background: #EEAECA;
+    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-family: "Lexend", sans-serif;
+    color: white;
+}
+img {
+    border-radius: 50px;
+    border-width: 10px;
+    border-color: white;
+    border-style: solid;
+    cursor: pointer;
+    transition-duration: 0.15s;
+}
+img:hover {
+    box-shadow: 10px 10px 5px 0px #ffffff1f;
+    transform: translateX(-5px);
+    transform: translateY(-5px);
+    transition-duration: 0.15s;
+}
+input {
+    font-family: "Lexend", sans-serif;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border-radius: 5px;
+    width: 20rem;
+    height: 3rem;
+    font-size: 2rem;
+    border-color: white;
+    border-style: solid;
+    margin: 2rem;
+}
+input::placeholder {
+    color: white;
+}
+button {
+    margin: 0.5rem;
+    font-family: "Lexend", sans-serif;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    width: 10rem;
+    height: 2rem;
+    font-size: auto;
+    border-color: white;
+    border-style: solid;
+    color: white;
+    transition-duration: 0.15s;
+}
+button:hover {
+    background-color: rgba(255, 255, 255, 0.273);
+    border-color: rgb(255, 103, 207);
+    border-style: solid;
+    transition-duration: 0.15s;
+    color: white;
+}
+canvas {
+    display: none;
+    border-color: white;
+    border-radius: 10px;
+    border-width: 5px;
+    border-style: solid;
+    transition-duration: 0.15s;
+}
+canvas:hover {
+    box-shadow: 10px 10px 5px 0px #ffffff1f;
+    transform: translateX(-5px);
+    transform: translateY(-5px);
+    transition-duration: 0.15s;
+}
