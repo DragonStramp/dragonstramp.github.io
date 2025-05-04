@@ -18,6 +18,7 @@ img {
     border-style: solid;
     cursor: pointer;
     transition-duration: 0.15s;
+    margin: 1rem;
 }
 img:hover {
     box-shadow: 10px 10px 5px 0px #ffffff1f;

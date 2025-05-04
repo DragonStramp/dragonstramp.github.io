@@ -1,17 +1,43 @@
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 const megamindImg = new Image();
+const iLoveMyImg = new Image();
 
 
 megamindImg.src = '../images/memes/megamind.png';
+iLoveMyImg.src = '../images/memes/ilovemy.png';
 
 
 function megamind() {
-    console.log(megamindImg);
     canvas.style.display = "block";
     canvas.width = megamindImg.width;
     canvas.height = megamindImg.height;
     draw(megamindImg); // Draw the initial image when it's loaded
+}
+
+function iLoveMy() {
+  canvas.style.display = "block";
+  canvas.width = iLoveMyImg.width;
+  canvas.height = iLoveMyImg.height;
+  drawILoveMy(iLoveMyImg); // Draw the initial image when it's loaded
+}
+
+function drawILoveMy(img) {
+  ctx.drawImage(img, 0, 0);
+
+  const text = document.getElementById('textInput').value;
+  if (!text) return;
+
+  // Dynamic font sizing
+  ctx.font = '15px Lexend';
+
+  ctx.fillStyle = 'black';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText("i love my " + text, 150, 20);
+  ctx.fillText("i love my " + text, 150, 280);
+  ctx.fillStyle = 'white';
+  ctx.fillText("where's my " + text, 500, 280);
 }
 
 
