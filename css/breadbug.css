@@ -38,19 +38,34 @@ a {
     padding: 1.5rem;
     text-decoration: none;
     font-size: 2.5rem;
+    opacity: 0;
     margin-top: 1rem;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    animation-delay: 0.55s;
+    animation-fill-mode: forwards;
 }
 h1 {
     font-family: "Comfortaa", sans-serif;
     color: white;
     font-size: 3rem;
+    opacity: 0;
     margin: 0;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
 }
 h3 {
     font-family: "Comfortaa", sans-serif;
     color: white;
     font-size: 1.5rem;
+    opacity: 0;
     margin: 0;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    animation-delay: 0.45s;
+    animation-fill-mode: forwards;
 }
 hr {
     border-width: 2.5px;
@@ -87,4 +102,8 @@ img {
 @keyframes dropin {
     0% {transform: translateY(-5rem)}
     100% {transform: translateY(0)}
+}
+@keyframes fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
