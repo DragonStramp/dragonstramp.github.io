@@ -3,12 +3,13 @@ const ctx = canvas.getContext('2d');
 const megamindImg = new Image();
 const iLoveMyImg = new Image();
 const vanishMemeImg = new Image();
+const nineteenImg = new Image();
 
 
 megamindImg.src = '../images/memes/megamind.png';
 iLoveMyImg.src = '../images/memes/ilovemy.png';
 vanishMemeImg.src = '../images/memes/peace.png'
-
+nineteenImg.src = '../images/memes/1984.png';
 
 function megamind() {
     canvas.style.display = "block";
@@ -22,6 +23,13 @@ function vanish() {
   canvas.width = vanishMemeImg.width;
   canvas.height = vanishMemeImg.height;
   draw(vanishMemeImg); // Draw the initial image when it's loaded
+}
+
+function nineteeneightyfour() {
+  canvas.style.display = "block";
+  canvas.width = nineteenImg.width;
+  canvas.height = nineteenImg.height;
+  draw(nineteenImg); // Draw the initial image when it's loaded
 }
 
 function iLoveMy() {
