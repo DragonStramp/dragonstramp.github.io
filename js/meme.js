@@ -2,10 +2,12 @@ const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 const megamindImg = new Image();
 const iLoveMyImg = new Image();
+const vanishMemeImg = new Image();
 
 
 megamindImg.src = '../images/memes/megamind.png';
 iLoveMyImg.src = '../images/memes/ilovemy.png';
+vanishMemeImg.src = '../images/memes/peace.png'
 
 
 function megamind() {
@@ -13,6 +15,13 @@ function megamind() {
     canvas.width = megamindImg.width;
     canvas.height = megamindImg.height;
     draw(megamindImg); // Draw the initial image when it's loaded
+}
+
+function vanish() {
+  canvas.style.display = "block";
+  canvas.width = vanishMemeImg.width;
+  canvas.height = vanishMemeImg.height;
+  draw(vanishMemeImg); // Draw the initial image when it's loaded
 }
 
 function iLoveMy() {
