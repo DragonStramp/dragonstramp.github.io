@@ -4,6 +4,7 @@ const snipCheck = document.getElementById("snipcheck");
 const notescheck = document.getElementById("notecheck");
 const nameText = document.getElementById("nametext");
 const numberText = document.getElementById("numbertext");
+const logtext = document.getElementById("logtext");
 
 function followUpToggle()
 {
@@ -103,7 +104,7 @@ function SaveToClipboard() {
         {insert: ""},
       ])
 
-
+      finishededitor.insertText(0, logtext.value + "\n", 'bold', false);
     if(snipCheck.checked == true)
       {
         finishededitor.insertText(0, snippeteditor.getText() + "\n", 'bold', false);
