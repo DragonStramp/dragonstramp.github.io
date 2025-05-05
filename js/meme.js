@@ -8,6 +8,7 @@ const guessWeImg = new Image();
 const gamblingImg = new Image();
 const bulblaxImg = new Image();
 const imPikminImg = new Image();
+const planktonImg = new Image();
 
 
 megamindImg.src = '../images/memes/megamind.png';
@@ -18,6 +19,7 @@ guessWeImg.src = '../images/memes/guess we doin.png';
 gamblingImg.src = '../images/memes/gambling.png';
 bulblaxImg.src = '../images/memes/bulblaxo.png';
 imPikminImg.src = '../images/memes/impikmin.png';
+planktonImg.src = '../images/memes/planktono.png';
 
 function megamind() {
     canvas.style.display = "block";
@@ -32,6 +34,14 @@ function bulblax() {
   canvas.height = bulblaxImg.height;
   draw(bulblaxImg); // Draw the initial image when it's loaded
 }
+
+function plankton() {
+  canvas.style.display = "block";
+  canvas.width = planktonImg.width;
+  canvas.height = planktonImg.height;
+  draw(planktonImg); // Draw the initial image when it's loaded
+}
+
 function imPikmin() {
   canvas.style.display = "block";
   canvas.width = imPikminImg.width;
@@ -97,7 +107,7 @@ function drawPikmin(img) {
 
   const text = document.getElementById('textInput').value;
   // Dynamic font sizing
-  ctx.font = '50px Lexend';
+  ctx.font = '35px Lexend';
 
   ctx.fillStyle = 'white';
   ctx.textAlign = 'left';
