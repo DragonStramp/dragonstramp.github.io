@@ -4,18 +4,36 @@ const megamindImg = new Image();
 const iLoveMyImg = new Image();
 const vanishMemeImg = new Image();
 const nineteenImg = new Image();
+const guessWeImg = new Image();
+const gamblingImg = new Image();
 
 
 megamindImg.src = '../images/memes/megamind.png';
 iLoveMyImg.src = '../images/memes/ilovemy.png';
 vanishMemeImg.src = '../images/memes/peace.png'
 nineteenImg.src = '../images/memes/1984.png';
+guessWeImg.src = '../images/memes/guess we doin.png';
+gamblingImg.src = '../images/memes/gambling.png';
 
 function megamind() {
     canvas.style.display = "block";
     canvas.width = megamindImg.width;
     canvas.height = megamindImg.height;
     draw(megamindImg); // Draw the initial image when it's loaded
+}
+
+function gambling() {
+  canvas.style.display = "block";
+  canvas.width = gamblingImg.width;
+  canvas.height = gamblingImg.height;
+  draw(gamblingImg); // Draw the initial image when it's loaded
+}
+
+function guesswedoin() {
+  canvas.style.display = "block";
+  canvas.width = guessWeImg.width;
+  canvas.height = guessWeImg.height;
+  drawGuessWeDoin(guessWeImg); // Draw the initial image when it's loaded
 }
 
 function vanish() {
@@ -55,6 +73,19 @@ function drawILoveMy(img) {
   ctx.fillText("i love my " + text, 150, 280);
   ctx.fillStyle = 'white';
   ctx.fillText("where's my " + text, 500, 280);
+}
+
+function drawGuessWeDoin(img) {
+  ctx.drawImage(img, 0, 0);
+
+  const text = document.getElementById('textInput').value;
+  // Dynamic font sizing
+  ctx.font = '15px Lexend';
+
+  ctx.fillStyle = 'black';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, 240, 40);
 }
 
 
