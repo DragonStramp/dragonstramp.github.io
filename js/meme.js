@@ -9,6 +9,7 @@ const gamblingImg = new Image();
 const bulblaxImg = new Image();
 const imPikminImg = new Image();
 const planktonImg = new Image();
+const liveReactionImg = new Image();
 
 
 megamindImg.src = '../images/memes/megamind.png';
@@ -20,6 +21,7 @@ gamblingImg.src = '../images/memes/gambling.png';
 bulblaxImg.src = '../images/memes/bulblaxo.png';
 imPikminImg.src = '../images/memes/impikmin.png';
 planktonImg.src = '../images/memes/planktono.png';
+liveReactionImg.src = '../images/memes/livereaction.png';
 
 function megamind() {
     canvas.style.display = "block";
@@ -33,6 +35,13 @@ function bulblax() {
   canvas.width = bulblaxImg.width;
   canvas.height = bulblaxImg.height;
   draw(bulblaxImg); // Draw the initial image when it's loaded
+}
+
+function liveReaction() {
+  canvas.style.display = "block";
+  canvas.width = liveReactionImg.width;
+  canvas.height = liveReactionImg.height;
+  drawLiveReaction(liveReactionImg); // Draw the initial image when it's loaded
 }
 
 function plankton() {
@@ -101,6 +110,51 @@ function drawILoveMy(img) {
   ctx.fillStyle = 'white';
   ctx.fillText("where's my " + text, 500, 280);
 }
+
+function drawLiveReaction(img) {
+  const boxHeight = 100;
+  const text = "LIVE " + document.getElementById('textInput').value + " REACTION";
+  const reactionImage = new Image();
+  const input = document.getElementById('imageUpload');
+  const file = input.files[0];
+
+  if (!file) return;
+
+  const reader = new FileReader();
+
+  reader.onload = function (event) {
+    reactionImage.onload = function () {
+      // Draw base image
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img, 0, 0);
+
+      // Draw uploaded image
+      ctx.drawImage(reactionImage, 10, 100, 525, 275);
+
+      // Dynamic font sizing
+      let fontSize = boxHeight - 10;
+      ctx.font = `${fontSize}px Lexend`;
+      let textWidth = ctx.measureText(text).width;
+
+      while ((textWidth > canvas.width - 20 || fontSize > boxHeight) && fontSize > 10) {
+        fontSize -= 1;
+        ctx.font = `${fontSize}px sans-serif`;
+        textWidth = ctx.measureText(text).width;
+      }
+
+      // Draw text
+      ctx.fillStyle = 'white';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(text, canvas.width / 2, boxHeight / 2);
+    };
+
+    reactionImage.src = event.target.result;
+  };
+
+  reader.readAsDataURL(file);
+}
+
 
 function drawPikmin(img) {
   ctx.drawImage(img, 0, 0);
