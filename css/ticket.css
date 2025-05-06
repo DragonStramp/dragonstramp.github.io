@@ -121,9 +121,9 @@ h2 {
     cursor: pointer;
 }
 @keyframes bp {
-    0% {width: 20%; background-color: var(--sub-header);}
-    50% {width: 18%; background-color: var(--button-pressed);}
-    100% {width: 20%; background-color: var(--sub-header);}
+    0% {transform: scale(1); background-color: var(--sub-header);}
+    50% {transform: scale(0.95); background-color: var(--button-pressed);}
+    100% {transform: scale(1); background-color: var(--sub-header);}
 }
 
 #finishededitor {
