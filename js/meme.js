@@ -10,6 +10,7 @@ const bulblaxImg = new Image();
 const imPikminImg = new Image();
 const planktonImg = new Image();
 const liveReactionImg = new Image();
+const heWillNeverMainImg = new Image();
 
 
 megamindImg.src = '../images/memes/megamind.png';
@@ -22,6 +23,7 @@ bulblaxImg.src = '../images/memes/bulblaxo.png';
 imPikminImg.src = '../images/memes/impikmin.png';
 planktonImg.src = '../images/memes/planktono.png';
 liveReactionImg.src = '../images/memes/livereaction.png';
+heWillNeverMainImg.src = '../images/memes/hewillnever.png';
 
 function megamind() {
     canvas.style.display = "block";
@@ -79,6 +81,13 @@ function vanish() {
   draw(vanishMemeImg); // Draw the initial image when it's loaded
 }
 
+function heWillNeverFunction() {
+  canvas.style.display = "block";
+  canvas.width = heWillNeverMainImg.width;
+  canvas.height = heWillNeverMainImg.height;
+  drawHeWillNever(heWillNeverMainImg); // Draw the initial image when it's loaded
+}
+
 function nineteeneightyfour() {
   canvas.style.display = "block";
   canvas.width = nineteenImg.width;
@@ -109,6 +118,52 @@ function drawILoveMy(img) {
   ctx.fillText("i love my " + text, 150, 280);
   ctx.fillStyle = 'white';
   ctx.fillText("where's my " + text, 500, 280);
+}
+
+function drawHeWillNever(img) {
+  const boxHeight = 100;
+  const text = document.getElementById('textInput').value;
+  const hewillneverimg = new Image();
+  const heimg = new Image();
+  const input = document.getElementById('imageUpload');
+  const file = input.files[0];
+  const input2 = document.getElementById('imageUploadTwo');
+  const file2 = input2.files[0];
+
+  if (!file) return;
+
+  const reader = new FileReader();
+  const reader2 = new FileReader();
+
+  ctx.drawImage(heWillNeverMainImg, 0, 0);
+
+  reader.onload = function (event) {
+    hewillneverimg.onload = function () {
+      ctx.drawImage(hewillneverimg, 0, 0, 270, 204);
+    };
+    hewillneverimg.src = event.target.result;
+  };
+
+  reader2.onload = function (event) {
+    heimg.onload = function () {
+      ctx.drawImage(heimg, 0, 207, 270, 204);
+    };
+    heimg.src = event.target.result;
+  };
+
+  reader.readAsDataURL(file);
+  reader2.readAsDataURL(file2);
+  
+  
+    // Dynamic font sizing
+    ctx.font = `15px Lexend`;
+
+
+    // Draw text
+    ctx.fillStyle = 'black';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(text, 290, 15);
 }
 
 function drawLiveReaction(img) {

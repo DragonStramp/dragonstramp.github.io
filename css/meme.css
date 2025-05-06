@@ -60,6 +60,9 @@ label {
 #imageUpload {
     display: none;
 }
+#imageUploadTwo {
+    display: none;
+}
 button {
     margin: 0.5rem;
     font-family: "Lexend", sans-serif;

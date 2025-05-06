@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>He Will Never Be Meme Generator</title>
+    <link rel="stylesheet" href="../css/meme.css">
+    <link rel="icon" href="../images/meme.svg">
+</head>
+<body>
+    <h1>He Will Never Be Meme</h1>
+    <canvas id="myCanvas"></canvas>
+    <input type="text" id="textInput" placeholder="Who's reaction...">
+
+    <label for="imageUpload" class="custom-file-upload">Top Image</label>
+    <input type="file" id="imageUpload" name="img" accept="image/*">
+
+    <label for="imageUploadTwo" class="custom-file-upload">Bottom Image</label>
+    <input type="file" id="imageUploadTwo" name="img" accept="image/*">
+    <button onclick="heWillNeverFunction()">Generate</button>
+    <button onclick="window.location.href='../memes.html'">Home</button>
+</body>
+<script src="../js/meme.js"></script>
+</html>
