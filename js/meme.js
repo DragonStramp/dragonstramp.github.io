@@ -11,6 +11,9 @@ const imPikminImg = new Image();
 const planktonImg = new Image();
 const liveReactionImg = new Image();
 const heWillNeverMainImg = new Image();
+const squidGameImg = new Image();
+const oldManImg = new Image();
+const coralineImg = new Image();
 
 
 megamindImg.src = '../images/memes/megamind.png';
@@ -24,12 +27,29 @@ imPikminImg.src = '../images/memes/impikmin.png';
 planktonImg.src = '../images/memes/planktono.png';
 liveReactionImg.src = '../images/memes/livereaction.png';
 heWillNeverMainImg.src = '../images/memes/hewillnever.png';
+squidGameImg.src = '../images/memes/squidgame.png';
+oldManImg.src = '../images/memes/oldmansquidgame.png';
+coralineImg.src = '../images/memes/sadman.png';
 
 function megamind() {
     canvas.style.display = "block";
     canvas.width = megamindImg.width;
     canvas.height = megamindImg.height;
     draw(megamindImg); // Draw the initial image when it's loaded
+}
+
+function coraline() {
+  canvas.style.display = "block";
+  canvas.width = coralineImg.width;
+  canvas.height = coralineImg.height;
+  draw(coralineImg); // Draw the initial image when it's loaded
+}
+
+function oldman() {
+  canvas.style.display = "block";
+  canvas.width = oldManImg.width;
+  canvas.height = oldManImg.height;
+  drawOldMan(oldManImg); // Draw the initial image when it's loaded
 }
 
 function bulblax() {
@@ -44,6 +64,13 @@ function liveReaction() {
   canvas.width = liveReactionImg.width;
   canvas.height = liveReactionImg.height;
   drawLiveReaction(liveReactionImg); // Draw the initial image when it's loaded
+}
+
+function squidgame() {
+  canvas.style.display = "block";
+  canvas.width = squidGameImg.width;
+  canvas.height = squidGameImg.height;
+  drawSquidGame(squidGameImg); // Draw the initial image when it's loaded
 }
 
 function plankton() {
@@ -119,6 +146,83 @@ function drawILoveMy(img) {
   ctx.fillStyle = 'white';
   ctx.fillText("where's my " + text, 500, 280);
 }
+
+function drawSquidGame(img) {
+  ctx.drawImage(img, 0, 0);
+
+  const text = document.getElementById('textInput').value;
+  const text2 = document.getElementById('textInput2').value;
+
+  // Dynamic font sizing
+  let fontSize = 240; // Start with nearly full height
+  ctx.font = `${fontSize}px Lexend`;
+  let textWidth = ctx.measureText(text).width;
+
+  while ((textWidth > 290 || fontSize > 240) && fontSize > 10) {
+    fontSize -= 1;
+    ctx.font = `${fontSize}px sans-serif`;
+    textWidth = ctx.measureText(text).width;
+  }
+
+  ctx.fillStyle = 'black';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, 150, 150);
+
+  fontSize = 240; // Start with nearly full height
+  ctx.font = `${fontSize}px Lexend`;
+  textWidth = ctx.measureText(text2).width;
+
+  while ((textWidth > 290 || fontSize > 240) && fontSize > 10) {
+    fontSize -= 1;
+    ctx.font = `${fontSize}px sans-serif`;
+    textWidth = ctx.measureText(text).width;
+  }
+
+  ctx.fillStyle = 'black';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text2, 150, 425);
+}
+
+function drawOldMan(img) {
+  ctx.drawImage(img, 0, 0);
+
+  const text = document.getElementById('textInput').value;
+  const text2 = document.getElementById('textInput2').value;
+
+  // Dynamic font sizing
+  let fontSize = 240; // Start with nearly full height
+  ctx.font = `${fontSize}px Lexend`;
+  let textWidth = ctx.measureText(text).width;
+
+  while ((textWidth > 290 || fontSize > 240) && fontSize > 10) {
+    fontSize -= 1;
+    ctx.font = `${fontSize}px sans-serif`;
+    textWidth = ctx.measureText(text).width;
+  }
+
+  ctx.fillStyle = 'white';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, 150, 25);
+
+  fontSize = 240; // Start with nearly full height
+  ctx.font = `${fontSize}px Lexend`;
+  textWidth = ctx.measureText(text2).width;
+
+  while ((textWidth > 250 || fontSize > 240) && fontSize > 10) {
+    fontSize -= 1;
+    ctx.font = `${fontSize}px sans-serif`;
+    textWidth = ctx.measureText(text).width;
+  }
+
+  ctx.fillStyle = 'white';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text2, 475, 25);
+}
+
 
 function drawHeWillNever(img) {
   const boxHeight = 100;
