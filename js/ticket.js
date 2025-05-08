@@ -38,7 +38,7 @@ function CopyAuthPin()
   navigator.clipboard.writeText(emailText);
   document.getElementById("pinbutton").text = "Copied!";
   document.getElementById("pinbutton").classList.remove("button");
-  document.getElementById("pinbutton").classList.add("buttonpressed");
+  document.getElementById("pinbutton").classList.add("buttonpressedtool");
 }
 function CopyPasswordLink()
 {
@@ -46,7 +46,7 @@ function CopyPasswordLink()
   navigator.clipboard.writeText(emailText);
   document.getElementById("passbutton").text = "Copied!";
   document.getElementById("passbutton").classList.remove("button");
-  document.getElementById("passbutton").classList.add("buttonpressed");
+  document.getElementById("passbutton").classList.add("buttonpressedtool");
 }
 
 function snipToggle()
