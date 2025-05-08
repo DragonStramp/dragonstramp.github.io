@@ -35,6 +35,10 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    transition-duration: 0.15s;
+}
+.toolbox:hover {
+    transform: scale(1.05);
 }
 aside {
     display: flex;
@@ -113,6 +117,7 @@ h2 {
 .button:hover {
     background-color: var(--button-pressed);
     cursor: pointer;
+    transform: scale(1.05);
 }
 .buttonpressed {
     text-decoration: none;
@@ -125,11 +130,12 @@ h2 {
     padding: 0.5rem;
     display: block;
     transition-duration: 0.25s;
-    width: 80%;
+    width: 20%;
     text-align: center;
     animation-name: bp;
     animation-duration: 0.25s;
     animation-direction: normal;
+    cursor: pointer;
 }
 .buttonpressedtool {
     text-decoration: none;
@@ -147,10 +153,11 @@ h2 {
     animation-name: bp;
     animation-duration: 0.25s;
     animation-direction: normal;
+    cursor: pointer;
 }
 .buttonpressed:hover {
     background-color: var(--button-pressed);
-    cursor: pointer;
+    transform: scale(1.05);
 }
 @keyframes bp {
     0% {transform: scale(1); background-color: var(--sub-header);}
