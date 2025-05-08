@@ -36,6 +36,7 @@ h1 {
     font-weight: bold;
     text-align: center;
     margin: 0;
+    margin-top: 5rem;
 }
 hr {
     width: 100%;
@@ -123,7 +124,7 @@ h2 {
 @keyframes bp {
     0% {transform: scale(1); background-color: var(--sub-header);}
     50% {transform: scale(0.95); background-color: var(--button-pressed);}
-    100% {transform: scale(1); background-color: var(--sub-header);}
+    65% {transform: scale(1); background-color: var(--sub-header);}
 }
 
 #finishededitor {

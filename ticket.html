@@ -9,6 +9,8 @@
 </head>
 <body>
     <section>
+        <h1>Ticket</h1>
+        <hr>
         <h2>Why They Called:</h2>
         <div id="editor"></div>
         <h2>What I Did:</h2>
@@ -22,18 +24,23 @@
         <input class="fu" id="numbertext" type="text">
         <h3 class="fu">Reason</h3>
         <div class="fu" id="fueditor"></div>
-        <hr>
         <h2>Notes:</h2>
         <h3>Include notes in ticket?<input id="notecheck" type="checkbox"></h3>
         <div id="notestext"></div>
         <h3>Call Log</h3>
         <input id="logtext" type="text">
-        <hr>
         <a class="button" id="copy" onclick="SaveToClipboard()">Copy</a>
         <div id="finishededitor"></div>
+        <br>
+        <h1>Tools</h1>
         <hr>
-        <a onclick="NewPage()" class="button">New</a>
-        <a href="tools.html" class="button">Tools</a>
+        <h2>Auth Pin Email</h2>
+        <h3>Pin: <input id="nametext" type="text"></h2>
+        <a class="button" id="pinbutton" onclick="CopyAuthPin()">Copy</a>
+        <h2>Password Reset</h2>
+        <h3>Reset Link: <input id="resetlink" type="text"></h2>
+        <h3>Username: <input id="username" type="text"></h2>
+        <a class="button" id="passbutton" onclick="CopyPasswordLink()">Copy</a>
 
     </section>
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
