@@ -29,6 +29,17 @@ section {
     align-items: center;
     flex-direction: column;
 }
+.toolbox {
+    display: flex;
+    margin: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+aside {
+    display: flex;
+    justify-content: center;
+}
 h1 {
     font-family: 'Poppins', sans-serif;
     color: var(--header);
@@ -95,6 +106,9 @@ h2 {
     transition-duration: 0.25s;
     width: 20%;
     text-align: center;
+}
+.toolbutton {
+    width: 80%;
 }
 .button:hover {
     background-color: var(--button-pressed);
