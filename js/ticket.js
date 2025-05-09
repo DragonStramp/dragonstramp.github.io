@@ -3,6 +3,7 @@ const followupCheck = document.getElementById("fucheck");
 const snipCheck = document.getElementById("snipcheck");
 const notescheck = document.getElementById("notecheck");
 const nameText = document.getElementById("nametext");
+const usernametext = document.getElementById("usernametext");
 const numberText = document.getElementById("numbertext");
 const logtext = document.getElementById("logtext");
 
@@ -23,6 +24,17 @@ function followUpToggle()
         }
     }
 }
+function notesToggle()
+{
+    if(notescheck.checked == true)
+    {
+        var fus = document.getElementById("notestext");
+        fus.style.display = 'block';
+    } else {
+        var fus = document.getElementById("notestext");
+        fus.style.display = 'none';
+    }
+}
 
 function NewPage()
 {
@@ -34,7 +46,7 @@ function NewPage()
 
 function CopyAuthPin()
 {
-  var emailText = "Hello, \n In recent communications with our support team, a copy of the authorization pin for your Mango Voice account was requested. \n \n Authorization Pin: " + document.getElementById("nametext").value + "\n \n This pin is necessary for any Mango Voice support agents to make changes to your account. \n Thank you, \n Mango Voice Support.";
+  var emailText = "Hello, \n In recent communications with our support team, a copy of the authorization pin for your Mango Voice account was requested. \n \n Authorization Pin: " + document.getElementById("usernametext").value + "\n \n This pin is necessary for any Mango Voice support agents to make changes to your account. \n Thank you, \n Mango Voice Support.";
   navigator.clipboard.writeText(emailText);
   document.getElementById("pinbutton").text = "Copied!";
   document.getElementById("pinbutton").classList.remove("button");

@@ -24,8 +24,7 @@
         <input class="fu" id="numbertext" type="text">
         <h3 class="fu">Reason</h3>
         <div class="fu" id="fueditor"></div>
-        <h2>Notes:</h2>
-        <h3>Include notes in ticket?<input id="notecheck" type="checkbox"></h3>
+        <h2>Notes <input onclick="notesToggle()" id="notecheck" type="checkbox"></h2>
         <div id="notestext"></div>
         <h3>Call Log</h3>
         <input id="logtext" type="text">
@@ -37,7 +36,7 @@
         <aside>
             <div class="toolbox">
             <h2>Auth Pin Email</h2>
-            <h3>Pin: <input id="nametext" type="text"></h2>
+            <h3>Pin: <input id="usernametext" type="text"></h2>
             <a class="button toolbutton" id="pinbutton" onclick="CopyAuthPin()">Copy</a>
             </div>
             <div class="toolbox">

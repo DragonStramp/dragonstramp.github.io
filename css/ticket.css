@@ -37,6 +37,9 @@ section {
     justify-content: space-around;
     transition-duration: 0.15s;
 }
+#notestext {
+    display: none;
+}
 .toolbox:hover {
     transform: scale(1.05);
 }
