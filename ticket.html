@@ -12,20 +12,20 @@
         <h1>Ticket</h1>
         <hr>
         <h2>Why They Called:</h2>
-        <div id="editor"></div>
+        <p class="edittext" id="whytext" contenteditable></p>
         <h2>What I Did:</h2>
-        <div id="editor2"></div>
+        <p class="edittext" id="didtext" contenteditable></p>
         <h2>Snippet<input onclick="snipToggle()" id="snipcheck" type="checkbox"></h2>
-        <div class="snippet" id="snippeteditor"></div>
+        <p class="edittext snippet" id="snippeteditor" contenteditable></p>
         <h2>Follow Up<input onclick="followUpToggle()" id="fucheck" type="checkbox"></h2>
         <h3 class="fu">Name (Optional)</h3>
         <input class="fu" id="nametext" type="text">
         <h3 class="fu">Number (Optional)</h3>
         <input class="fu" id="numbertext" type="text">
         <h3 class="fu">Reason</h3>
-        <div class="fu" id="fueditor"></div>
+        <p class="edittext fu" id="followuptext" contenteditable></p>
         <h2>Notes <input onclick="notesToggle()" id="notecheck" type="checkbox"></h2>
-        <div id="notestext"></div>
+        <p class="edittext" id="notestext" contenteditable></p>
         <h3>Call Log</h3>
         <input id="logtext" type="text">
         <a class="button" id="copy" onclick="SaveToClipboard()">Copy</a>

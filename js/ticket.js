@@ -6,6 +6,11 @@ const nameText = document.getElementById("nametext");
 const usernametext = document.getElementById("usernametext");
 const numberText = document.getElementById("numbertext");
 const logtext = document.getElementById("logtext");
+const whytext = document.getElementById("whytext");
+const didtext = document.getElementById("didtext");
+const snippettext = document.getElementById("snippeteditor");
+const notestext = document.getElementById("notestext");
+const followtext = document.getElementById("followuptext");
 
 function followUpToggle()
 {
@@ -28,21 +33,17 @@ function notesToggle()
 {
     if(notescheck.checked == true)
     {
-        var fus = document.getElementById("notestext");
-        fus.style.display = 'block';
+        notestext.style.display = 'block';
     } else {
-        var fus = document.getElementById("notestext");
-        fus.style.display = 'none';
+        notestext.style.display = 'none';
     }
 }
 
-function NewPage()
-{
-    if(confirm("Clear the current ticket?"))
-    {
-        location.reload();
-    }
-}
+const finishededitor = new Quill('#finishededitor', {
+  modules: {
+  toolbar: false
+  },
+});
 
 function CopyAuthPin()
 {
@@ -65,47 +66,11 @@ function snipToggle()
 {
     if(snipCheck.checked == true)
     {
-        document.getElementById("snippeteditor").style.display = "block";
+      snippettext.style.display = "block";
     } else {
-        document.getElementById("snippeteditor").style.display = "none";
+      snippettext.style.display = "none";
     }
 }
-
-const quill = new Quill('#editor', {
-    modules: {
-    toolbar: false
-    },
-  });
-
-  const quill2 = new Quill('#editor2', {
-    modules: {
-    toolbar: false
-    },
-  });
-  
-  const snippeteditor = new Quill('#snippeteditor', {
-    modules: {
-    toolbar: false
-    },
-  });
-
-  const fueditor = new Quill('#fueditor', {
-    modules: {
-    toolbar: false
-    },
-  });
-
-  const finishededitor = new Quill('#finishededitor', {
-    modules: {
-    toolbar: false
-    },
-  });
-
-  const noteseditor = new Quill('#notestext', {
-    modules: {
-    toolbar: false
-    },
-  });
 
 function SaveToClipboard() {
     document.getElementById("finishededitor").style.display = "block";
@@ -119,19 +84,19 @@ function SaveToClipboard() {
       finishededitor.insertText(0, logtext.value + "\n", 'bold', false);
     if(snipCheck.checked == true)
       {
-        finishededitor.insertText(0, snippeteditor.getText() + "\n", 'bold', false);
+        finishededitor.insertText(0, snippettext.innerText + "\n", 'bold', false);
         finishededitor.insertText(0, 'Snippet:\n', 'bold', true);
       }
 
       if(notescheck.checked == true)
       {
-        finishededitor.insertText(0, noteseditor.getText() + "\n \n", 'bold', false);
+        finishededitor.insertText(0, notestext.innerText + "\n \n", 'bold', false);
         finishededitor.insertText(0, 'Notes:\n', 'bold', true);
       }      
       
-      finishededitor.insertText(0, quill2.getText() + "\n \n", 'bold', false);
+      finishededitor.insertText(0, didtext.innerText + "\n \n", 'bold', false);
       finishededitor.insertText(0, 'What I Did:\n', 'bold', true);
-      finishededitor.insertText(0, quill.getText() + "\n \n", 'bold', false);
+      finishededitor.insertText(0, whytext.innerText + "\n \n", 'bold', false);
       finishededitor.insertText(0, 'Why They Called:\n', 'bold', true);
 
       if(followupCheck.checked == true)
@@ -144,7 +109,7 @@ function SaveToClipboard() {
             {
               finishededitor.insertText(0, 'FU Name: ' + nameText.value + "\n", 'bold', false);
             }
-          finishededitor.insertText(0, fueditor.getText() + "\n", 'bold', false);
+          finishededitor.insertText(0, followtext.innerText + "\n", 'bold', false);
           finishededitor.insertText(0, 'Follow Up Reason:\n', 'bold', true);
         }
     finishededitor.setSelection(0, finishededitor.getLength());

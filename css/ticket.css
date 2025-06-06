@@ -36,6 +36,15 @@ section {
     align-items: center;
     justify-content: space-around;
     transition-duration: 0.15s;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 10px;
+    border-color: var(--box-border);
+    color: var(--text-color);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    color: var(--text-color)
 }
 #notestext {
     display: none;
@@ -85,13 +94,24 @@ input {
     border-color: var(--box-border);
     color: var(--text-color)
 }
-div {
+#finishededitor {
     width: 100%;
     border-color: var(--box-border);
     color: var(--text-color);
     border-width: 1px;
     border-style: solid;
     border-radius: 10px;
+}
+.edittext {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 10px;
+    border-color: var(--box-border);
+    color: var(--text-color);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+    color: var(--text-color)
 }
 h2 {
     font-family: 'Poppins', sans-serif;
