@@ -37,10 +37,10 @@ function weekProgress(startDay = 1, startHour = 6, endDay = 5, endHour = 18) {
 function updateTimers()
 {
     sixAmTimer.style.width = weekProgress(1, 6, 5, 18) + "%";
-    sixAmPercent.innerText = "6AM SHIFT: " + weekProgress(1, 6, 5, 18).toFixed(3).toString() + "%";
+    sixAmPercent.innerText = "6AM SHIFT: " + weekProgress(1, 6, 5, 18).toFixed(2).toString() + "%";
 
     sevenAmTimer.style.width = weekProgress(1, 7, 5, 19) + "%";
-    sevenAmPercent.innerText = "7AM SHIFT: " + weekProgress(1, 7, 5, 19).toFixed(3).toString() + "%";
+    sevenAmPercent.innerText = "7AM SHIFT: " + weekProgress(1, 7, 5, 19).toFixed(10).toString() + "%";
 
     eightAmTimer.style.width = weekProgress(1, 8, 5, 20) + "%";
     eightAmPercent.innerText = "8AM SHIFT: " + weekProgress(1, 8, 5, 20).toFixed(3).toString() + "%";
@@ -54,4 +54,4 @@ updateTimers();
 const update = setInterval(function()
 {
     updateTimers();
-}, 1000);
+}, 100);
