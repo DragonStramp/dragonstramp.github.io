@@ -33,6 +33,18 @@ html {
   animation: gradientShift 6s ease infinite;
 }
 
+#eighttimer {
+  background: linear-gradient(270deg, #BA1C21, #d7292c, #BA1C21);
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+}
+
+#ninetimer {
+  background: linear-gradient(270deg, #1D546C, #1A3D64, #1D546C);
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+}
+
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
