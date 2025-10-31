@@ -1,4 +1,3 @@
-// DOM elements
 const sixAmTimer = document.getElementById("sixtimer");
 const sixAmPercent = document.getElementById("sixpercent");
 
@@ -68,4 +67,4 @@ function updateTimers() {
 }
 
 updateTimers();
-setInterval(updateTimers, 100); // update every minute
+setInterval(updateTimers, 100);
