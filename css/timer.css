@@ -27,6 +27,12 @@ html {
   animation: gradientShift 6s ease infinite;
 }
 
+#seventimer {
+  background: linear-gradient(270deg, #0D6EFD, #4089F7, #0D6EFD);
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+}
+
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
