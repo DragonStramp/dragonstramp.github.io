@@ -44,7 +44,7 @@ section {
     border-width: 1px;
     border-style: solid;
     border-radius: 10px;
-    color: var(--text-color)
+    color: var(--text-color);
 }
 #notestext {
     display: none;
@@ -55,6 +55,7 @@ section {
 aside {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 h1 {
     font-family: 'Poppins', sans-serif;
