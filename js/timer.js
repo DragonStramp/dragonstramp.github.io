@@ -1,3 +1,4 @@
+// DOM elements
 const sixAmTimer = document.getElementById("sixtimer");
 const sixAmPercent = document.getElementById("sixpercent");
 
@@ -10,48 +11,61 @@ const eightAmPercent = document.getElementById("eightpercent");
 const nineAmTimer = document.getElementById("ninetimer");
 const nineAmPercent = document.getElementById("ninepercent");
 
-function weekProgress(startDay = 1, startHour = 6, endDay = 5, endHour = 18) {
+function getShiftWorkWeekProgress({startDay = 1, endDay = 5, shiftStart = 6} = {}) {
   const now = new Date();
+  const currentDay = now.getDay();
+  const currentHour = now.getHours() + now.getMinutes() / 60;
 
-  const start = new Date(now);
-  start.setHours(0, 0, 0, 0);
-  const day = start.getDay();
-  const daysSinceStart = (day - startDay + 7) % 7;
-  start.setDate(start.getDate() - daysSinceStart);
-  start.setHours(startHour, 0, 0, 0);
+  const firstBlockStart = shiftStart;
+  const firstBlockEnd = shiftStart + 4;
+  const breakStart = firstBlockEnd;
+  const breakEnd = breakStart + 1;
+  const secondBlockStart = breakEnd;
+  const secondBlockEnd = secondBlockStart + 4;
 
-  const end = new Date(start);
-  end.setDate(start.getDate() + ((endDay - startDay + 7) % 7));
-  end.setHours(endHour, 0, 0, 0);
+  const workHoursPerDay = 8;
+  const totalWorkHoursWeek = workHoursPerDay * (endDay - startDay + 1);
 
-  if (end <= start) end.setDate(end.getDate() + 7);
+  let completedHours = 0;
 
-  const totalMs = end - start;
-  const elapsedMs = now - start;
-  const percentage = (elapsedMs / totalMs) * 100;
-
-  return Math.min(Math.max(percentage, 0), 100);
+  if (currentDay > startDay) {
+    const daysDone = Math.min(currentDay - startDay, endDay - startDay);
+    completedHours += daysDone * workHoursPerDay;
+  }
+  if (currentDay >= startDay && currentDay <= endDay) {
+    if (currentHour >= secondBlockEnd) {
+      completedHours += workHoursPerDay;
+    } else if (currentHour <= firstBlockStart) {
+    } else if (currentHour < breakStart) {
+      completedHours += currentHour - firstBlockStart;
+    } else if (currentHour < breakEnd) {
+      completedHours += (firstBlockEnd - firstBlockStart);
+    } else if (currentHour < secondBlockEnd) {
+      completedHours +=
+        (firstBlockEnd - firstBlockStart) + (currentHour - secondBlockStart);
+    }
+  }
+  const percentage = (completedHours / totalWorkHoursWeek) * 100;
+  return percentage;
 }
 
+function updateTimers() {
+  const sixPercent = getShiftWorkWeekProgress({ shiftStart: 6 }).toFixed(2);
+  sixAmTimer.style.width = sixPercent + "%";
+  sixAmPercent.innerText = `6AM SHIFT: ${sixPercent}%`;
 
-function updateTimers()
-{
-    sixAmTimer.style.width = weekProgress(1, 6, 5, 18) + "%";
-    sixAmPercent.innerText = "6AM SHIFT: " + weekProgress(1, 6, 5, 18).toFixed(2).toString() + "%";
+  const sevenPercent = getShiftWorkWeekProgress({ shiftStart: 7 }).toFixed(6);
+  sevenAmTimer.style.width = sevenPercent + "%";
+  sevenAmPercent.innerText = `7AM SHIFT: ${sevenPercent}%`;
 
-    sevenAmTimer.style.width = weekProgress(1, 7, 5, 19) + "%";
-    sevenAmPercent.innerText = "7AM SHIFT: " + weekProgress(1, 7, 5, 19).toFixed(10).toString() + "%";
+  const eightPercent = getShiftWorkWeekProgress({ shiftStart: 8 }).toFixed(3);
+  eightAmTimer.style.width = eightPercent + "%";
+  eightAmPercent.innerText = `8AM SHIFT: ${eightPercent}%`;
 
-    eightAmTimer.style.width = weekProgress(1, 8, 5, 20) + "%";
-    eightAmPercent.innerText = "8AM SHIFT: " + weekProgress(1, 8, 5, 20).toFixed(3).toString() + "%";
-
-    nineAmTimer.style.width = weekProgress(1, 9, 5, 21) + "%";
-    nineAmPercent.innerText = "9AM SHIFT: " + weekProgress(1, 9, 5, 21).toFixed(3).toString() + "%";
+  const ninePercent = getShiftWorkWeekProgress({ shiftStart: 9 }).toFixed(3);
+  nineAmTimer.style.width = ninePercent + "%";
+  nineAmPercent.innerText = `9AM SHIFT: ${ninePercent}%`;
 }
 
 updateTimers();
-
-const update = setInterval(function()
-{
-    updateTimers();
-}, 100);
+setInterval(updateTimers, 100); // update every minute

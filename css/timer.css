@@ -16,6 +16,7 @@ html {
     height: 2vmax;
     background-color: #98A1BC;
     border-radius: 8px;
+    transition-duration: 0.05s;
 }
 
 .timer {
@@ -25,6 +26,11 @@ html {
   background: linear-gradient(270deg, #F4EBD3, #DED3C4, #98A1BC);
   background-size: 300% 300%;
   animation: gradientShift 6s ease infinite;
+}
+
+.timer-holder:hover {
+  scale: 1.15;
+  transition-duration: 0.05s;
 }
 
 #sixtimer {
