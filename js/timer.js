@@ -14,7 +14,9 @@ const nineAmPercent = document.getElementById("ninepercent");
 function getShiftWorkWeekProgress({startDay = 1, endDay = 5, shiftStart = 6} = {}) {
   const now = new Date();
   const currentDay = now.getDay();
-  const currentHour = now.getHours() + now.getMinutes() / 60;
+  const currentTime = now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds() + now.getMilliseconds() / 1000;
+  const currentHour = currentTime / 3600;
+
 
   const firstBlockStart = shiftStart;
   const firstBlockEnd = shiftStart + 4;
@@ -68,4 +70,4 @@ function updateTimers() {
 }
 
 updateTimers();
-setInterval(updateTimers, 100); // update every minute
+setInterval(updateTimers, 100);
