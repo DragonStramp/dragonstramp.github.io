@@ -1,4 +1,3 @@
-// DOM elements
 const sixAmTimer = document.getElementById("sixtimer");
 const sixAmPercent = document.getElementById("sixpercent");
 

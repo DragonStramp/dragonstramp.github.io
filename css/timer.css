@@ -16,7 +16,7 @@ html {
     height: 2vmax;
     background-color: #98A1BC;
     border-radius: 8px;
-    transition-duration: 0.05s;
+    transition-duration: 0.15s;
 }
 
 .timer {
@@ -29,8 +29,8 @@ html {
 }
 
 .timer-holder:hover {
-  scale: 1.15;
-  transition-duration: 0.05s;
+  scale: 2;
+  transition-duration: 0.15s;
 }
 
 #sixtimer {
