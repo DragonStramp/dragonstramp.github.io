@@ -53,18 +53,30 @@ function getShiftWorkWeekProgress({startDay = 1, endDay = 5, shiftStart = 6} = {
 function updateTimers() {
   const sixPercent = getShiftWorkWeekProgress({ shiftStart: 6 }).toFixed(2);
   sixAmTimer.style.width = sixPercent + "%";
+  if(sixPercent >= 100) {
+    sixAmTimer.style.background = 'linear-gradient(270deg, #BA1C21, #d7a629ff, #1cba5eff, #1c88baff, #1c41baff)';
+  }
   sixAmPercent.innerText = `6AM SHIFT: ${sixPercent}%`;
 
   const sevenPercent = getShiftWorkWeekProgress({ shiftStart: 7 }).toFixed(6);
   sevenAmTimer.style.width = sevenPercent + "%";
+  if(sevenPercent >= 100) {
+    sevenAmTimer.style.background = 'linear-gradient(270deg, #BA1C21, #d7a629ff, #1cba5eff, #1c88baff, #1c41baff)';
+  }
   sevenAmPercent.innerText = `7AM SHIFT: ${sevenPercent}%`;
 
   const eightPercent = getShiftWorkWeekProgress({ shiftStart: 8 }).toFixed(3);
   eightAmTimer.style.width = eightPercent + "%";
+  if(eightPercent >= 100) {
+    eightAmTimer.style.background = 'linear-gradient(270deg, #BA1C21, #d7a629ff, #1cba5eff, #1c88baff, #1c41baff)';
+  }
   eightAmPercent.innerText = `8AM SHIFT: ${eightPercent}%`;
 
   const ninePercent = getShiftWorkWeekProgress({ shiftStart: 9 }).toFixed(3);
   nineAmTimer.style.width = ninePercent + "%";
+  if(ninePercent >= 100) {
+    nineAmTimer.style.background = 'linear-gradient(270deg, #BA1C21, #d7a629ff, #1cba5eff, #1c88baff, #1c41baff)';
+  }
   nineAmPercent.innerText = `9AM SHIFT: ${ninePercent}%`;
 }
 
