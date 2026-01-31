@@ -81,10 +81,38 @@ h3 {
 }
 
 .button {
-  width: 100%;
+  width: 45%;
   height: 20%;
   border-radius: 8px;
   background-color: rgb(131, 131, 131);
   border: none;
   margin-top: 1vmax;
+  cursor: pointer;
+  transition-duration: 0.15s;
+}
+
+.button:hover {
+  background-color: rgb(105, 105, 105);
+  cursor: pointer;
+  scale: 1.05;
+  transition-duration: 0.15s;
+}
+
+.reset-button {
+  width: 15%;
+  height: 100%;
+  border-radius: 8px;
+  background-color: rgb(131, 131, 131);
+  border: none;
+  margin-top: 1vmax;
+  cursor: pointer;
+  transition-duration: 0.15s;
+  margin-left: 10px;
+}
+
+.reset-button:hover {
+  background-color: rgb(255, 189, 189);
+  cursor: pointer;
+  scale: 1.05;
+  transition-duration: 0.15s;
 }

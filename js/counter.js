@@ -1,67 +1,42 @@
-const header1 = document.getElementById("header1");
-const header2 = document.getElementById("header2");
-const header3 = document.getElementById("header3");
-const header4 = document.getElementById("header4");
-const header5 = document.getElementById("header5");
+const headers = [];
+const counterNames = [];
+const counterNumbers = [];
+var buttonCount = 5;
 
-var counter1name = localStorage.getItem("counter1name") || "Counter 1";
-var counter1num = Number(localStorage.getItem("counter1num")) || 0;
-
-var counter2name = localStorage.getItem("counter2name") || "Counter 2";
-var counter2num = Number(localStorage.getItem("counter2num")) || 0;
-
-var counter3name = localStorage.getItem("counter3name") || "Counter 3";
-var counter3num = Number(localStorage.getItem("counter3num")) || 0;
-
-var counter4name = localStorage.getItem("counter4name") || "Counter 4";
-var counter4num = Number(localStorage.getItem("counter4num")) || 0;
-
-var counter5name = localStorage.getItem("counter5name") || "Counter 5";
-var counter5num = Number(localStorage.getItem("counter5num")) || 0;
-
-header1.innerText = counter1name + ": " + counter1num.toString();
-header2.innerText = counter2name + ": " + counter2num.toString();
-header3.innerText = counter3name + ": " + counter3num.toString();
-header4.innerText = counter4name + ": " + counter4num.toString();
-header5.innerText = counter5name + ": " + counter5num.toString();
-
-function IncreaseCounter1()
+for(let i = 0; i < buttonCount; i++)
 {
-    counter1num += 1;
-    header1.innerText = counter1name + ": " + counter1num.toString();
-    localStorage.setItem("counter1num", counter1num);
+    headers.push(document.getElementById("header" + i.toString()));
+    counterNames.push(localStorage.getItem("counter" + i.toString() + "name") || "Counter " + (i + 1).toString());
+    counterNumbers.push(Number(localStorage.getItem("counter" + i.toString() + "num")) || 0);
 }
 
-function IncreaseCounter2()
+for(let i = 0; i < buttonCount; i++)
 {
-    counter2num += 1;
-    header2.innerText = counter2name + ": " + counter2num.toString();
-    localStorage.setItem("counter2num", counter2num);
+    headers[i].innerText = counterNames[i] + ": " + counterNumbers[i].toString();
 }
 
-function IncreaseCounter3()
+function IncreaseCounter(cNum)
 {
-    counter3num += 1;
-    header3.innerText = counter3name + ": " + counter3num.toString();
-    localStorage.setItem("counter3num", counter3num);
-}
-
-function IncreaseCounter4()
-{
-    counter4num += 1;
-    header4.innerText = counter4name + ": " + counter4num.toString();
-    localStorage.setItem("counter4num", counter4num);
-}
-
-function IncreaseCounter5()
-{
-    counter5num += 1;
-    header5.innerText = counter5name + ": " + counter5num.toString();
-    localStorage.setItem("counter5num", counter5num);
+    counterNumbers[cNum] += 1;
+    headers[cNum].innerText = counterNames[cNum] + ": " + counterNumbers[cNum].toString();
+    localStorage.setItem("counter" + cNum.toString() + "num", counterNumbers[cNum]);
 }
 
 function RenameCounter(counterNumber, counterName)
 {
-    localStorage.setItem("counter" + counterNumber.toString() + "name", counterName);
+    localStorage.setItem("counter" + (counterNumber - 1).toString() + "name", counterName);
+    headers[counterNumber - 1].innerText = counterNames[counterNumber - 1] + ": " + counterNumbers[counterNumber - 1].toString();
     console.log("Renamed!");
+}
+
+function ResetNumber(cNum)
+{
+    counterNumbers[cNum] = 0;
+    headers[cNum].innerText = counterNames[cNum] + ": " + counterNumbers[cNum].toString();
+    localStorage.setItem("counter" + cNum.toString() + "num", counterNumbers[cNum]);
+}
+
+function StorageClear()
+{
+    localStorage.clear();
 }
