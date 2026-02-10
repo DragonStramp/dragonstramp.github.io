@@ -14,7 +14,7 @@ const heWillNeverMainImg = new Image();
 const squidGameImg = new Image();
 const oldManImg = new Image();
 const coralineImg = new Image();
-
+const myJobImg = new Image();
 
 megamindImg.src = '../images/memes/megamind.png';
 iLoveMyImg.src = '../images/memes/ilovemy.png';
@@ -30,6 +30,7 @@ heWillNeverMainImg.src = '../images/memes/hewillnever.png';
 squidGameImg.src = '../images/memes/squidgame.png';
 oldManImg.src = '../images/memes/oldmansquidgame.png';
 coralineImg.src = '../images/memes/sadman.png';
+myJobImg.src = '../images/memes/my-job-here-is-done.jpg';
 
 function megamind() {
     canvas.style.display = "block";
@@ -127,6 +128,51 @@ function iLoveMy() {
   canvas.width = iLoveMyImg.width;
   canvas.height = iLoveMyImg.height;
   drawILoveMy(iLoveMyImg); // Draw the initial image when it's loaded
+}
+
+function myJobHere() {
+  canvas.style.display = "block";
+  canvas.width = myJobImg.width;
+  canvas.height = myJobImg.height;
+  drawMyJobHere(myJobImg); // Draw the initial image when it's loaded
+}
+
+function drawMyJobHere(img) {
+  ctx.drawImage(img, 0, 0);
+
+  const text = document.getElementById('textInput').value;
+  const text2 = document.getElementById('textInput2').value;
+
+  // Dynamic font sizing
+  let fontSize = 50; // Start with nearly full height
+  ctx.font = `${fontSize}px Lexend`;
+  let textWidth = ctx.measureText(text).width;
+
+  while ((textWidth > 290 || fontSize > 240) && fontSize > 10) {
+    fontSize -= 1;
+    ctx.font = `${fontSize}px sans-serif`;
+    textWidth = ctx.measureText(text).width;
+  }
+
+  ctx.fillStyle = 'white';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text, 150, 150);
+
+  fontSize = 50; // Start with nearly full height
+  ctx.font = `${fontSize}px Lexend`;
+  textWidth = ctx.measureText(text2).width;
+
+  while ((textWidth > 290 || fontSize > 240) && fontSize > 10) {
+    fontSize -= 1;
+    ctx.font = `${fontSize}px sans-serif`;
+    textWidth = ctx.measureText(text).width;
+  }
+
+  ctx.fillStyle = 'white';
+  ctx.textAlign = 'right';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(text2, 425, 500);
 }
 
 function drawILoveMy(img) {
