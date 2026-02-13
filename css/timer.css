@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Tapestry&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Metamorphous&family=Tapestry&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 html {
     border: 0;
@@ -125,5 +128,16 @@ h3 {
 }
 
 .minecraft-font {
-    font-family: "Pixelify Sans", sans-serif;
+    /* font-family: "Pixelify Sans", sans-serif; */
+      font-family: "Tourney", sans-serif;
+}
+
+.nic-background {
+  /* background-image: url(../images/minecraft.jpg); */
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.nic-font {
+    font-family: "Tapestry", serif;
 }

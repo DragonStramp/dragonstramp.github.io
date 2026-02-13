@@ -51,5 +51,16 @@ function Minecraft()
     document.getElementById("header2").classList.add("minecraft-font");
     document.getElementById("header3").classList.add("minecraft-font");
     document.getElementById("header4").classList.add("minecraft-font");
+}
 
+function ScaryMode()
+{
+    document.getElementById("main").classList.add("nic-background");
+    document.getElementById("title").classList.add("nic-font");
+    document.getElementById("title").innerText = "Nic's Counters";
+    document.getElementById("header0").classList.add("nic-font");
+    document.getElementById("header1").classList.add("nic-font");
+    document.getElementById("header2").classList.add("nic-font");
+    document.getElementById("header3").classList.add("nic-font");
+    document.getElementById("header4").classList.add("nic-font");
 }
