@@ -45,6 +45,7 @@ function Minecraft()
 {
     document.getElementById("main").classList.add("minecraft-background");
     document.getElementById("title").classList.add("minecraft-font");
+    document.getElementById("title").innerText = "Minecraft";
     document.getElementById("header0").classList.add("minecraft-font");
     document.getElementById("header1").classList.add("minecraft-font");
     document.getElementById("header2").classList.add("minecraft-font");
