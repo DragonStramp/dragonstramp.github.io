@@ -55,12 +55,12 @@ function Minecraft()
 
 function ScaryMode()
 {
-    document.getElementById("main").classList.add("nic-background");
-    document.getElementById("title").classList.add("nic-font");
-    document.getElementById("title").innerText = "Nic's Counters";
-    document.getElementById("header0").classList.add("nic-font");
-    document.getElementById("header1").classList.add("nic-font");
-    document.getElementById("header2").classList.add("nic-font");
-    document.getElementById("header3").classList.add("nic-font");
-    document.getElementById("header4").classList.add("nic-font");
+    document.getElementById("main").classList.add("chris-background");
+    document.getElementById("title").classList.add("chris-font");
+    document.getElementById("title").innerText = "Chrissy Wake Up";
+    document.getElementById("header0").classList.add("chris-font");
+    document.getElementById("header1").classList.add("chris-font");
+    document.getElementById("header2").classList.add("chris-font");
+    document.getElementById("header3").classList.add("chris-font");
+    document.getElementById("header4").classList.add("chris-font");
 }

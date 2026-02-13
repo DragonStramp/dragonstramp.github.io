@@ -132,12 +132,12 @@ h3 {
       font-family: "Tourney", sans-serif;
 }
 
-.nic-background {
-  /* background-image: url(../images/minecraft.jpg); */
+.chris-background {
+  background-image: url(../images/dwarf.png);
   background-size: 100%;
   background-attachment: fixed;
 }
 
-.nic-font {
-    font-family: "Tapestry", serif;
+.chris-font {
+    font-family: "Tourney", sans-serif;
 }
