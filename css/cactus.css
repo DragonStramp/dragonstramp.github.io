@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+:root {
+    --gray: #625565;
+    --dark-gray: #2e222f;
+}
+
+body {
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    font-family: "Pixelify Sans", sans-serif;
+    color: var(--dark-gray);
+    font-size: 2vmax;
+}
+
+button {
+    background-image: url("../images/cactus/button.png");
+    background-repeat: no-repeat;
+    background-size: 10vw;
+    background-color:#2e222f00;
+    width: 10vw;
+    height: 5vmax;
+    border: none;
+    font-size: 1vmax;
+    font-family: "Pixelify Sans", sans-serif;
+    color: var(--dark-gray);
+    transition-duration: 0.15s;
+    cursor: pointer;
+}
+
+button:hover {
+    scale: 1.1;
+    transition-duration: 0.15s;
+}
+
+#main-cactus {
+    transition-duration: 0.15s;
+    cursor: pointer;
+    width: 10vw;
+}
+
+#main-cactus:hover {
+    scale: 1.1;
+    transition-duration: 0.15s;
+}
