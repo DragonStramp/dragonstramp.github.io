@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap');
+
 /* font-family: 'Patrick Hand', cursive; */
 #main-body {
   /* background-color:#1E8875; */
@@ -26,7 +27,7 @@ body {
 }
 h1 {
   color:white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Pixelify Sans", sans-serif;
   font-size: 4vmax;
   text-align:center;
   line-height: 0;
@@ -35,21 +36,22 @@ h1 {
 }
 p {
   color:white;
-  font-family: 'Rubik', sans-serif;
+    font-family: "Pixelify Sans", sans-serif;
+
   text-align:center;
   font-size:1.5vmax;
   margin:auto 7vmax auto 7vmax;
 }
 h3 {
   color:white;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Pixelify Sans", sans-serif;
   text-align:center;
   font-size:2vmax;
   margin:auto 7vmax auto 7vmax;
 }
 a {
   color:rgb(0, 234, 255);
-  font-family: 'Rubik', sans-serif;
+  font-family: "Pixelify Sans", sans-serif;
   text-align:center;
   font-size:1.5vmax;
   display:inline;
