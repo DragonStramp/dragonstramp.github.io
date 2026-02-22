@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Tapestry&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Metamorphous&family=Tapestry&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+
+h1, h2, h3, p {
+    color: 	#dddddd;
+    font-family: "Lexend", sans-serif;
+}
+
+.smh {
+    user-select: none;
+}
+.simple-button {
+    display: none;
+}
+.simple-text {
+    margin-bottom: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.15s;
+}
+
+.simple-text:hover {
+    background-color: #41464b;
+    transition-duration: 0.15s;
+}
+
+.minecraft-background {
+  background-image: url(../images/minecraft.jpg);
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.minecraft-font {
+    font-family: "Pixelify Sans", sans-serif;
+    font-family: "Tourney", sans-serif;
+}
+
+.chris-background {
+  background-image: url(../images/dwarf.png);
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.chris-font {
+    font-family: "Tourney", sans-serif;
+}

@@ -22,16 +22,31 @@ function IncreaseCounter(cNum)
     localStorage.setItem("counter" + cNum.toString() + "num", counterNumbers[cNum]);
 }
 
-function RenameCounter(counterNumber, counterName)
+function SetCounterName()
 {
-    localStorage.setItem("counter" + (counterNumber - 1).toString() + "name", counterName);
-    headers[counterNumber - 1].innerText = counterNames[counterNumber - 1] + ": " + counterNumbers[counterNumber - 1].toString();
-    console.log("Renamed!");
+    let newName = document.getElementById("new-counter-name").value;
+    let newNum = parseInt(document.getElementById("new-counter-number").value);
+
+    if (!newName || isNaN(newNum) || newNum < 1 || newNum > buttonCount) {
+        return;
+    }
+    counterNames[newNum - 1] = newName;
+    localStorage.setItem("counter" + (newNum - 1) + "name", newName);
+    headers[newNum - 1].innerText = counterNames[newNum - 1] + ": " + counterNumbers[newNum - 1];
 }
 
 function ResetNumber(cNum)
 {
-    counterNumbers[cNum] = 0;
+    if (confirm("Reset " + counterNames[cNum] + " count?")) {
+        counterNumbers[cNum] = 0;
+        headers[cNum].innerText = counterNames[cNum] + ": " + counterNumbers[cNum].toString();
+        localStorage.setItem("counter" + cNum.toString() + "num", counterNumbers[cNum]);
+    }
+}
+
+function SubtractNumber(cNum)
+{
+    counterNumbers[cNum] -= 1;
     headers[cNum].innerText = counterNames[cNum] + ": " + counterNumbers[cNum].toString();
     localStorage.setItem("counter" + cNum.toString() + "num", counterNumbers[cNum]);
 }
@@ -41,16 +56,30 @@ function StorageClear()
     localStorage.clear();
 }
 
+function Simplify(isEnabled)
+{
+    let simpleButtons = document.getElementsByClassName("smb");
+    let simpleHeaders = document.getElementsByClassName("smh");
+
+    for(let i = 0; i < simpleButtons.length; i++)
+    {
+        simpleButtons[i].classList.toggle("simple-button", isEnabled);
+    }
+    for(let i = 0; i < simpleHeaders.length; i++)
+    {
+        simpleHeaders[i].classList.toggle("simple-text", isEnabled);
+        simpleHeaders[i].classList.toggle("mb-3", !isEnabled);
+    }
+}
+
 function Minecraft()
 {
     document.getElementById("main").classList.add("minecraft-background");
     document.getElementById("title").classList.add("minecraft-font");
     document.getElementById("title").innerText = "Minecraft";
-    document.getElementById("header0").classList.add("minecraft-font");
-    document.getElementById("header1").classList.add("minecraft-font");
-    document.getElementById("header2").classList.add("minecraft-font");
-    document.getElementById("header3").classList.add("minecraft-font");
-    document.getElementById("header4").classList.add("minecraft-font");
+    headers.forEach(header => {
+        header.classList.add("minecraft-font");
+    });
 }
 
 function ScaryMode()
@@ -58,9 +87,7 @@ function ScaryMode()
     document.getElementById("main").classList.add("chris-background");
     document.getElementById("title").classList.add("chris-font");
     document.getElementById("title").innerText = "Chrissy Wake Up";
-    document.getElementById("header0").classList.add("chris-font");
-    document.getElementById("header1").classList.add("chris-font");
-    document.getElementById("header2").classList.add("chris-font");
-    document.getElementById("header3").classList.add("chris-font");
-    document.getElementById("header4").classList.add("chris-font");
+    headers.forEach(header => {
+        header.classList.add("chris-font");
+    });
 }
