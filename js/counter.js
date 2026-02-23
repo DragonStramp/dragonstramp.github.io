@@ -77,6 +77,11 @@ function Simplify(isEnabled)
     }
 }
 
+function ToggleTimers(isEnabled)
+{
+    document.getElementById("timers").classList.toggle("shown", !isEnabled);
+}
+
 function Minecraft()
 {
     document.getElementById("main").classList.add("minecraft-background");

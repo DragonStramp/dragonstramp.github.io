@@ -21,6 +21,10 @@ h1, h2, h3, p {
     transition-duration: 0.15s;
 }
 
+.shown {
+    display: none;
+}
+
 .simple-text:hover {
     background-color: #41464b;
     transition-duration: 0.15s;
