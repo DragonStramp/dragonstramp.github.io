@@ -51,6 +51,11 @@ function SubtractNumber(cNum)
     localStorage.setItem("counter" + cNum.toString() + "num", counterNumbers[cNum]);
 }
 
+function LightMode()
+{
+    document.getElementById("main").setAttribute('data-bs-theme', 'light');
+}
+
 function StorageClear()
 {
     localStorage.clear();
