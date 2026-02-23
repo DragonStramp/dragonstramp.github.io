@@ -15,7 +15,7 @@
 
   <div class="row g-4">
 <!-- Counter 1 -->
-    <div class="col-md-12 col-sm-6">
+    <div class="counter-box col-md-12 col-sm-6">
       <div class="card shadow text-center p-3">
         <h2 onclick="IncreaseCounter(0)" oncontextmenu="SubtractNumber(0); return false;" id="header0" class="mb-3 smh">Counter 1: 0</h2>
         <div class="d-flex justify-content-center gap-2">
@@ -28,7 +28,7 @@
 <!-- End Counter 1 -->
 
 <!-- Counter 2 -->
-    <div class="col-md-12 col-sm-6">
+    <div class="counter-box col-md-12 col-sm-6">
       <div class="card shadow text-center p-3">
         <h2 onclick="IncreaseCounter(1)" oncontextmenu="SubtractNumber(1); return false;" id="header1" class="mb-3 smh">Counter 2: 0</h2>
         <div class="d-flex justify-content-center gap-2">
@@ -41,7 +41,7 @@
 <!-- End Counter 2 -->
 
 <!-- Counter 3 -->
-    <div class="col-md-12 col-sm-6">
+    <div class="counter-box col-md-12 col-sm-6">
       <div class="card shadow text-center p-3">
         <h2 onclick="IncreaseCounter(2)" oncontextmenu="SubtractNumber(2); return false;" id="header2" class="mb-3 smh">Counter 3: 0</h2>
         <div class="d-flex justify-content-center gap-2">
@@ -54,7 +54,7 @@
 <!-- End Counter 3 -->
 
 <!-- Counter 4 -->
-    <div class="col-md-12 col-sm-6">
+    <div class="counter-box col-md-12 col-sm-6">
       <div class="card shadow text-center p-3">
         <h2 onclick="IncreaseCounter(3)" oncontextmenu="SubtractNumber(3); return false;" id="header3" class="mb-3 smh">Counter 4: 0</h2>
         <div class="d-flex justify-content-center gap-2">
@@ -67,7 +67,7 @@
 <!-- End Counter 4 -->
 
 <!-- Counter 5 -->
-    <div class="col-md-12 col-sm-12">
+    <div class="counter-box col-md-12 col-sm-12">
       <div class="card shadow text-center p-3">
         <h2 onclick="IncreaseCounter(4)" oncontextmenu="SubtractNumber(4); return false;" id="header4" class="mb-3 smh">Counter 5: 0</h2>
         <div class="d-flex justify-content-center gap-2">
@@ -138,10 +138,15 @@
         <input class="form-check-input" type="checkbox" role="switch" onchange="ToggleTimers(this.checked)" id="timersSwitch">
         <label class="form-check-label" for="timersSwitch">Work Timers</label>
     </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" onchange="ToggleTransparent(this.checked)" id="transparentSwitch">
+        <label class="form-check-label" for="transparentSwitch">Transparent Cards</label>
+    </div>
     <hr>
     <button onclick="Minecraft()" class="btn btn-secondary">Minecraft</button>
     <button onclick="ScaryMode()" class="btn btn-secondary">Dwarf Fortress</button>
     <button onclick="LightMode()" class="btn btn-secondary">Light Mode</button>
+    <button onclick="Lorax()" class="btn btn-secondary">Lorax Mode</button>
   </div>
 </div>
 </body>

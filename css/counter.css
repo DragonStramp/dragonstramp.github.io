@@ -41,6 +41,20 @@ h1, h2, h3, p {
     font-family: "Tourney", sans-serif;
 }
 
+.lorax-background {
+  background-image: url(../images/lorax.png);
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.lorax-font {
+    font-family: "Tapestry", sans-serif;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
 .chris-background {
   background-image: url(../images/dwarf.png);
   background-size: 100%;

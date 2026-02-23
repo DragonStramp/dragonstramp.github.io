@@ -1,7 +1,11 @@
 const headers = [];
 const counterNames = [];
 const counterNumbers = [];
-var buttonCount = 5;
+
+let counters = document.getElementsByClassName("counter-box");
+let cards = document.getElementsByClassName("card");
+let buttonCount = 5;
+let darkMode = true;
 
 for(let i = 0; i < buttonCount; i++)
 {
@@ -51,11 +55,6 @@ function SubtractNumber(cNum)
     localStorage.setItem("counter" + cNum.toString() + "num", counterNumbers[cNum]);
 }
 
-function LightMode()
-{
-    document.getElementById("main").setAttribute('data-bs-theme', 'light');
-}
-
 function StorageClear()
 {
     localStorage.clear();
@@ -84,20 +83,53 @@ function ToggleTimers(isEnabled)
 
 function Minecraft()
 {
-    document.getElementById("main").classList.add("minecraft-background");
-    document.getElementById("title").classList.add("minecraft-font");
+    document.getElementById("main").classList.toggle("minecraft-background");
+    document.getElementById("title").classList.toggle("minecraft-font");
     document.getElementById("title").innerText = "Minecraft";
     headers.forEach(header => {
-        header.classList.add("minecraft-font");
+        header.classList.toggle("minecraft-font");
+    });
+}
+
+function Lorax()
+{
+    document.getElementById("main").classList.toggle("lorax-background");
+    document.getElementById("title").classList.toggle("lorax-font");
+    document.getElementById("title").innerText = "why are we still here";
+    headers.forEach(header => {
+        header.classList.toggle("lorax-font");
     });
 }
 
 function ScaryMode()
 {
-    document.getElementById("main").classList.add("chris-background");
-    document.getElementById("title").classList.add("chris-font");
+    document.getElementById("main").classList.toggle("chris-background");
+    document.getElementById("title").classList.toggle("chris-font");
     document.getElementById("title").innerText = "Chrissy Wake Up";
     headers.forEach(header => {
-        header.classList.add("chris-font");
+        header.classList.toggle("chris-font");
+    });
+    Array.from(counters).forEach(counter => {
+        counter.classList.toggle("col-md-12");
+        counter.classList.toggle("col-md-3");
+    });
+}
+
+function LightMode()
+{
+    if(darkMode)
+    {
+        document.getElementById("main").setAttribute('data-bs-theme', 'light');
+        darkMode = false;
+    } else {
+        document.getElementById("main").setAttribute('data-bs-theme', 'dark');
+        darkMode = true;
+    }
+}
+
+function ToggleTransparent(isEnabled)
+{
+    Array.from(cards).forEach(card => {
+        card.classList.toggle("transparent");
     });
 }
