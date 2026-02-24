@@ -25,9 +25,8 @@ img {
     max-width: 20rem;
 }
 img:hover {
-    box-shadow: 10px 10px 5px 0px #ffffff1f;
-    transform: translateX(-5px);
-    transform: translateY(-5px);
+    box-shadow: 10px 10px 5px 0px #15151514;
+    scale: 1.05;
     transition-duration: 0.15s;
 }
 input {

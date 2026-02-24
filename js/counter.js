@@ -111,7 +111,7 @@ function ScaryMode()
     });
     Array.from(counters).forEach(counter => {
         counter.classList.toggle("col-md-12");
-        counter.classList.toggle("col-md-3");
+        counter.classList.toggle("col-md-5");
     });
 }
 
