@@ -12,17 +12,21 @@ const snippettext = document.getElementById("snippeteditor");
 const notestext = document.getElementById("notestext");
 const followtext = document.getElementById("followuptext");
 
+let fus = document.getElementsByClassName("fu");
+for(i = 0; i < fus.length; i++)
+{
+    fus[i].style.display = 'none';
+}
+
 function followUpToggle()
 {
     if(followupCheck.checked == true)
     {
-        var fus = document.getElementsByClassName("fu");
         for(i = 0; i < fus.length; i++)
         {
             fus[i].style.display = 'block';
         }
     } else {
-        var fus = document.getElementsByClassName("fu");
         for(i = 0; i < fus.length; i++)
         {
             fus[i].style.display = 'none';
@@ -82,17 +86,17 @@ function SaveToClipboard() {
       ])
 
       finishededitor.insertText(0, logtext.value + "\n", 'bold', false);
-    if(snipCheck.checked == true)
-      {
-        finishededitor.insertText(0, snippettext.innerText + "\n", 'bold', false);
-        finishededitor.insertText(0, 'Snippet:\n', 'bold', true);
-      }
+    // if(snipCheck.checked == true)
+    //   {
+    //     finishededitor.insertText(0, snippettext.innerText + "\n", 'bold', false);
+    //     finishededitor.insertText(0, 'Snippet:\n', 'bold', true);
+    //   }
 
-      if(notescheck.checked == true)
-      {
-        finishededitor.insertText(0, notestext.innerText + "\n \n", 'bold', false);
-        finishededitor.insertText(0, 'Notes:\n', 'bold', true);
-      }      
+      // if(notescheck.checked == true)
+      // {
+      //   finishededitor.insertText(0, notestext.innerText + "\n \n", 'bold', false);
+      //   finishededitor.insertText(0, 'Notes:\n', 'bold', true);
+      // }      
       
       finishededitor.insertText(0, didtext.innerText + "\n \n", 'bold', false);
       finishededitor.insertText(0, 'What I Did:\n', 'bold', true);
@@ -110,7 +114,7 @@ function SaveToClipboard() {
               finishededitor.insertText(0, 'FU Name: ' + nameText.value + "\n", 'bold', false);
             }
           finishededitor.insertText(0, followtext.innerText + "\n", 'bold', false);
-          finishededitor.insertText(0, 'Follow Up Reason:\n', 'bold', true);
+          // finishededitor.insertText(0, 'Follow Up Reason:\n', 'bold', true);
         }
     finishededitor.setSelection(0, finishededitor.getLength());
     document.execCommand('copy');

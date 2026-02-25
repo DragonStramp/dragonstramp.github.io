@@ -4,55 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket Generator</title>
-    <link rel="stylesheet" href="css/ticket.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 </head>
-<body>
-    <section>
-        <h1>Ticket</h1>
-        <hr>
-        <h2>Why They Called:</h2>
-        <p class="edittext" id="whytext" contenteditable></p>
-        <h2>What I Did:</h2>
-        <p class="edittext" id="didtext" contenteditable></p>
-        <h2>Snippet<input onclick="snipToggle()" id="snipcheck" type="checkbox"></h2>
-        <p class="edittext snippet" id="snippeteditor" contenteditable></p>
-        <h2>Follow Up<input onclick="followUpToggle()" id="fucheck" type="checkbox"></h2>
-        <h3 class="fu">Name (Optional)</h3>
-        <input class="fu" id="nametext" type="text">
-        <h3 class="fu">Number (Optional)</h3>
-        <input class="fu" id="numbertext" type="text">
-        <h3 class="fu">Reason</h3>
-        <p class="edittext fu" id="followuptext" contenteditable></p>
-        <h2>Notes <input onclick="notesToggle()" id="notecheck" type="checkbox"></h2>
-        <p class="edittext" id="notestext" contenteditable></p>
-        <h3>Call Log</h3>
-        <input id="logtext" type="text">
-        <a class="button" id="copy" onclick="SaveToClipboard()">Copy</a>
-        <div id="finishededitor"></div>
-        <br>
-        <h1>Tools</h1>
-        <hr>
-        <aside>
-            <div class="toolbox">
-                <h2>Auth Pin Email</h2>
-                <h3>Pin: <input id="usernametext" type="text"></h2>
-                <a class="button toolbutton" id="pinbutton" onclick="CopyAuthPin()">Copy</a>
-                </div>
-            <div class="toolbox">
-                <h2>Password Reset</h2>
-                <h3>Reset Link: <input id="resetlink" type="text"></h2>
-                <h3>Username: <input id="username" type="text"></h2>
-                <a class="button toolbutton" id="passbutton" onclick="CopyPasswordLink()">Copy</a>
+<body data-bs-theme="dark">
+    <section class=" container text-center py-5 col-md-12">
+        <h1>Ticket Generator:</h1>
+        <aside class="card shadow col-md-11 mx-auto">
+            <h2>Why They Called:</h2>
+            <p class="card col-md-6 mx-auto" id="whytext" contenteditable></p>
+            <h2>What I Did:</h2>
+            <p class="card col-md-6 mx-auto" id="didtext" contenteditable></p>
+            <h3>Follow Up Needed <input onclick="followUpToggle()" id="fucheck" type="checkbox"></h2>
+            <h4 class="fu" style="display: none;">Follow Up Name:</h3>
+            <input class="fu mx-auto card" style="display: none;" id="nametext" type="text">
+            <h4 class="fu" style="display: none;">Follow Up Number:</h3>
+            <input class="fu mx-auto card" style="display: none;" id="numbertext" type="text">
+            <h4>Call Log Link:</h3>
+            <input class="card mx-auto" id="logtext" type="text">
+            <br>
+            <a class="btn btn-secondary mx-auto mt-3" id="copy" onclick="SaveToClipboard()">Copy</a>
+            <div class="card mx-auto col-md-10 mt-3" style="display: none;" id="finishededitor"></div>
+            <br>
+        </aside>
+            <!-- <h1 class="mt-5">Tools:</h1> -->
+        <aside class="d-flex justify-content-around mt-5">
+            <div class="card shadow col-md-5 text-center mx-auto">
+                <h3>Auth Pin Email</h2>
+                <h4>Pin:</h2>
+                <input class="mx-2 card" id="usernametext" type="text">
+                <a class="btn btn-secondary mx-auto mt-3 mb-3 col-md-4" id="pinbutton" onclick="CopyAuthPin()">Copy</a>
             </div>
-            <!-- <div class="toolbox">
-                <h2>Ticket Templates</h2>
-                <a class="button toolbutton">Clear Cache</a>
-                <a class="button toolbutton">Remoted/Clear Cache</a>
-            </div> -->
+            <div class="card shadow col-md-5 text-center mx-auto">
+                <h3>Password Reset Email</h2>
+                <h4>Reset Link:</h2>
+                <input class="mx-2 card" id="resetlink" type="text">
+                <h4>Username:</h2>
+                <input class="mx-2 card" id="username" type="text">
+                <a class="btn btn-secondary mx-auto mt-3 mb-3 col-md-4" id="passbutton" onclick="CopyPasswordLink()">Copy</a>
+            </div>
         </aside>
     </section>
 <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="js/ticket.js"></script>
 </body>
 </html>
