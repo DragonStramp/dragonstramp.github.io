@@ -12,10 +12,41 @@ const snippettext = document.getElementById("snippeteditor");
 const notestext = document.getElementById("notestext");
 const followtext = document.getElementById("followuptext");
 
+document.getElementById("darkModeCheck").addEventListener("change", function () {
+  if (this.checked) {
+    darkMode();
+  }
+});
+
+document.getElementById("lightModeCheck").addEventListener("change", function () {
+  if (this.checked) {
+    lightMode();
+  }
+});
+
+// document.getElementById("pinkModeCheck").addEventListener("change", function () {
+//   if (this.checked) {
+//         Array.from(document.getElementsByClassName("card")).forEach(card => {
+//         card.classList.add("pink-card");
+//     })
+//   } else {
+//       Array.from(document.getElementsByClassName("card")).forEach(card => {
+//       card.classList.remove("pink-card");
+//     })
+//   }
+// });
+
 let fus = document.getElementsByClassName("fu");
 for(i = 0; i < fus.length; i++)
 {
     fus[i].style.display = 'none';
+}
+
+function darkMode() {
+  document.getElementById("main").setAttribute('data-bs-theme', 'dark');
+}
+function lightMode() {
+  document.getElementById("main").setAttribute('data-bs-theme', 'light');
 }
 
 function followUpToggle()
@@ -86,18 +117,6 @@ function SaveToClipboard() {
       ])
 
       finishededitor.insertText(0, logtext.value + "\n", 'bold', false);
-    // if(snipCheck.checked == true)
-    //   {
-    //     finishededitor.insertText(0, snippettext.innerText + "\n", 'bold', false);
-    //     finishededitor.insertText(0, 'Snippet:\n', 'bold', true);
-    //   }
-
-      // if(notescheck.checked == true)
-      // {
-      //   finishededitor.insertText(0, notestext.innerText + "\n \n", 'bold', false);
-      //   finishededitor.insertText(0, 'Notes:\n', 'bold', true);
-      // }      
-      
       finishededitor.insertText(0, didtext.innerText + "\n \n", 'bold', false);
       finishededitor.insertText(0, 'What I Did:\n', 'bold', true);
       finishededitor.insertText(0, whytext.innerText + "\n \n", 'bold', false);
@@ -114,7 +133,6 @@ function SaveToClipboard() {
               finishededitor.insertText(0, 'FU Name: ' + nameText.value + "\n", 'bold', false);
             }
           finishededitor.insertText(0, followtext.innerText + "\n", 'bold', false);
-          // finishededitor.insertText(0, 'Follow Up Reason:\n', 'bold', true);
         }
     finishededitor.setSelection(0, finishededitor.getLength());
     document.execCommand('copy');
