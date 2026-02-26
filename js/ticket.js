@@ -14,27 +14,49 @@ const followtext = document.getElementById("followuptext");
 
 document.getElementById("darkModeCheck").addEventListener("change", function () {
   if (this.checked) {
+    clearThemes();
     darkMode();
   }
 });
 
 document.getElementById("lightModeCheck").addEventListener("change", function () {
   if (this.checked) {
+    clearThemes();
     lightMode();
   }
 });
 
-// document.getElementById("pinkModeCheck").addEventListener("change", function () {
-//   if (this.checked) {
-//         Array.from(document.getElementsByClassName("card")).forEach(card => {
-//         card.classList.add("pink-card");
-//     })
-//   } else {
-//       Array.from(document.getElementsByClassName("card")).forEach(card => {
-//       card.classList.remove("pink-card");
-//     })
-//   }
-// });
+document.getElementById("pinkModeCheck").addEventListener("change", e => {
+    console.log("Checkbox state:", e.target.checked);
+    lightMode();
+    toggleClass('.card', 'pink-card', true);
+    toggleClass('#main', 'pink-background', true);
+    toggleClass('h1', 'pink-text', true);
+    toggleClass('h2', 'pink-text', true);
+    toggleClass('h3', 'pink-text', true);
+    toggleClass('h4', 'pink-text', true);
+    toggleClass('a', 'pink-text', true);
+    toggleClass('.btn', 'pink-card', true);
+});
+
+function toggleClass(selector, className, isEnabled)
+{
+  document.querySelectorAll(selector).forEach(card => {
+        card.classList.toggle(className, isEnabled);
+    });
+}
+
+function clearThemes()
+{
+    toggleClass('.card', 'pink-card', false);
+    toggleClass('#main', 'pink-background', false);
+    toggleClass('h1', 'pink-text', false);
+    toggleClass('h2', 'pink-text', false);
+    toggleClass('h3', 'pink-text', false);
+    toggleClass('h4', 'pink-text', false);
+    toggleClass('.btn', 'pink-card', false);
+    toggleClass('a', 'pink-text', false);
+}
 
 let fus = document.getElementsByClassName("fu");
 for(i = 0; i < fus.length; i++)
