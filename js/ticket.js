@@ -12,9 +12,34 @@ const snippettext = document.getElementById("snippeteditor");
 const notestext = document.getElementById("notestext");
 const followtext = document.getElementById("followuptext");
 
+let currentTheme = localStorage.getItem("theme" || "darkMode");
+
+if(currentTheme == "dark")
+{
+  darkMode();
+} else if (currentTheme == "light")
+{
+  lightMode();
+} else if (currentTheme == "pink")
+{
+  lightMode();
+  changeClasses("pink", true);
+} else if (currentTheme == "mango")
+{
+  lightMode();
+  changeClasses("mango", true);
+} else if (currentTheme == "synth")
+{
+  lightMode();
+  changeClasses("synth", true);
+}
+
+document.getElementById(`${currentTheme}ModeCheck`).checked = true;
+
 document.getElementById("darkModeCheck").addEventListener("change", function () {
   if (this.checked) {
     clearThemes();
+    localStorage.setItem("theme", "dark");
     darkMode();
   }
 });
@@ -22,21 +47,29 @@ document.getElementById("darkModeCheck").addEventListener("change", function () 
 document.getElementById("lightModeCheck").addEventListener("change", function () {
   if (this.checked) {
     clearThemes();
-    lightMode();
+    localStorage.setItem("theme", "light");
   }
 });
 
 document.getElementById("pinkModeCheck").addEventListener("change", e => {
-    console.log("Checkbox state:", e.target.checked);
+    localStorage.setItem("theme", "pink");
+    clearThemes();
     lightMode();
-    toggleClass('.card', 'pink-card', true);
-    toggleClass('#main', 'pink-background', true);
-    toggleClass('h1', 'pink-text', true);
-    toggleClass('h2', 'pink-text', true);
-    toggleClass('h3', 'pink-text', true);
-    toggleClass('h4', 'pink-text', true);
-    toggleClass('a', 'pink-text', true);
-    toggleClass('.btn', 'pink-card', true);
+    changeClasses("pink", true);
+});
+
+document.getElementById("mangoModeCheck").addEventListener("change", e => {
+    localStorage.setItem("theme", "mango");
+    clearThemes();
+    lightMode();
+    changeClasses("mango", true);
+});
+
+document.getElementById("synthModeCheck").addEventListener("change", e => {
+    localStorage.setItem("theme", "synth");
+    clearThemes();
+    lightMode();
+    changeClasses("synth", true);
 });
 
 function toggleClass(selector, className, isEnabled)
@@ -48,14 +81,9 @@ function toggleClass(selector, className, isEnabled)
 
 function clearThemes()
 {
-    toggleClass('.card', 'pink-card', false);
-    toggleClass('#main', 'pink-background', false);
-    toggleClass('h1', 'pink-text', false);
-    toggleClass('h2', 'pink-text', false);
-    toggleClass('h3', 'pink-text', false);
-    toggleClass('h4', 'pink-text', false);
-    toggleClass('.btn', 'pink-card', false);
-    toggleClass('a', 'pink-text', false);
+    changeClasses("pink", false);
+    changeClasses("synth", false);
+    changeClasses("mango", false);
 }
 
 let fus = document.getElementsByClassName("fu");
@@ -69,6 +97,17 @@ function darkMode() {
 }
 function lightMode() {
   document.getElementById("main").setAttribute('data-bs-theme', 'light');
+}
+function changeClasses(themeName, isEnabled)
+{
+    toggleClass('.card', themeName + '-card', isEnabled);
+    toggleClass('#main', themeName + '-background', isEnabled);
+    toggleClass('h1', themeName + '-text', isEnabled);
+    toggleClass('h2', themeName + '-text', isEnabled);
+    toggleClass('h3', themeName + '-text', isEnabled);
+    toggleClass('h4', themeName + '-text', isEnabled);
+    toggleClass('a', themeName + '-text', isEnabled);
+    toggleClass('.btn', themeName + '-card', isEnabled);
 }
 
 function followUpToggle()
