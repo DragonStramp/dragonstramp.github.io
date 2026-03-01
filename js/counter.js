@@ -7,6 +7,99 @@ let cards = document.getElementsByClassName("card");
 let buttonCount = 5;
 let darkMode = true;
 
+
+//Theming
+
+let currentTheme = localStorage.getItem("theme") || "dark";
+let currentMode = localStorage.getItem("mode") || "dark";
+
+changeTheme(currentTheme, true, currentMode);
+
+document.getElementById(currentTheme + 'ModeCheck').checked = true;
+
+document.getElementById("darkModeCheck").addEventListener("change", e => {
+    clearThemes();
+    changeTheme('dark', true, 'dark');
+});
+
+document.getElementById("lightModeCheck").addEventListener("change", e => {
+    clearThemes();
+    changeTheme('light', true, 'light');
+});
+
+document.getElementById("pinkModeCheck").addEventListener("change", e => {
+    clearThemes();
+    changeTheme('pink', true, 'light');
+});
+
+document.getElementById("mangoModeCheck").addEventListener("change", e => {
+    clearThemes();
+    changeTheme('mango', true, 'light');
+});
+
+document.getElementById("synthModeCheck").addEventListener("change", e => {
+    clearThemes();
+    changeTheme('synth', true, 'dark');
+});
+
+document.getElementById("dwarfModeCheck").addEventListener("change", e => {
+    clearThemes();
+    changeTheme('dwarf', true, 'dark');
+});
+
+document.getElementById("mineModeCheck").addEventListener("change", e => {
+    clearThemes();
+    changeTheme('mine', true, 'dark');
+});
+
+document.getElementById("loraxModeCheck").addEventListener("change", e => {
+    clearThemes();
+    changeTheme('lorax', true, 'dark');
+});
+
+function toggleClass(selector, className, isEnabled)
+{
+  document.querySelectorAll(selector).forEach(card => {
+        card.classList.toggle(className, isEnabled);
+    });
+}
+
+function clearThemes()
+{
+    changeTheme('pink', false, 'light');
+    changeTheme('mango', false, 'light');
+    changeTheme('synth', false, 'light');
+    changeTheme('dwarf', false, 'light');
+    changeTheme('mine', false, 'light');
+    changeTheme('lorax', false, 'light');
+}
+
+function StorageClear()
+{
+    localStorage.clear();
+}
+
+function changeTheme(themeName, isEnabled, baseTheme)
+{
+    document.getElementById("main").setAttribute('data-bs-theme', baseTheme);
+    localStorage.setItem("theme", themeName);
+    localStorage.setItem("mode", baseTheme);
+    if(themeName != baseTheme)
+    { 
+      toggleClass('.card', themeName + '-card', isEnabled);
+      toggleClass('#main', themeName + '-background', isEnabled);
+      toggleClass('h1', themeName + '-text', isEnabled);
+      toggleClass('h2', themeName + '-text', isEnabled);
+      toggleClass('h3', themeName + '-text', isEnabled);
+      toggleClass('h4', themeName + '-text', isEnabled);
+      toggleClass('a', themeName + '-text', isEnabled);
+      toggleClass('.btn', themeName + '-card', isEnabled);
+    }
+}
+
+
+// Logic
+
 for(let i = 0; i < buttonCount; i++)
 {
     headers.push(document.getElementById("header" + i.toString()));
@@ -81,55 +174,9 @@ function ToggleTimers(isEnabled)
     document.getElementById("timers").classList.toggle("shown", !isEnabled);
 }
 
-function Minecraft()
-{
-    document.getElementById("main").classList.toggle("minecraft-background");
-    document.getElementById("title").classList.toggle("minecraft-font");
-    document.getElementById("title").innerText = "Minecraft";
-    headers.forEach(header => {
-        header.classList.toggle("minecraft-font");
-    });
-}
-
-function Lorax()
-{
-    document.getElementById("main").classList.toggle("lorax-background");
-    document.getElementById("title").classList.toggle("lorax-font");
-    document.getElementById("title").innerText = "why are we still here";
-    headers.forEach(header => {
-        header.classList.toggle("lorax-font");
-    });
-}
-
-function ScaryMode()
-{
-    document.getElementById("main").classList.toggle("chris-background");
-    document.getElementById("title").classList.toggle("chris-font");
-    document.getElementById("title").innerText = "Chrissy Wake Up";
-    headers.forEach(header => {
-        header.classList.toggle("chris-font");
-    });
-    Array.from(counters).forEach(counter => {
-        counter.classList.toggle("col-md-12");
-        counter.classList.toggle("col-md-5");
-    });
-}
-
-function LightMode()
-{
-    if(darkMode)
-    {
-        document.getElementById("main").setAttribute('data-bs-theme', 'light');
-        darkMode = false;
-    } else {
-        document.getElementById("main").setAttribute('data-bs-theme', 'dark');
-        darkMode = true;
-    }
-}
-
 function ToggleTransparent(isEnabled)
 {
     Array.from(cards).forEach(card => {
-        card.classList.toggle("transparent");
+        card.classList.toggle("transparent", isEnabled);
     });
 }

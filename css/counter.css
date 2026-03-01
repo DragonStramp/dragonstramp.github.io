@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Metamorphous&family=Tapestry&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
 
 h1, h2, h3, p {
-    /* color: 	#dddddd; */
     font-family: "Lexend", sans-serif;
 }
 
@@ -30,14 +29,13 @@ h1, h2, h3, p {
     transition-duration: 0.15s;
 }
 
-.minecraft-background {
+.mine-background {
   background-image: url(../images/minecraft.jpg);
   background-size: 100%;
   background-attachment: fixed;
 }
 
-.minecraft-font {
-    font-family: "Pixelify Sans", sans-serif;
+.mine-font {
     font-family: "Tourney", sans-serif;
 }
 
@@ -55,12 +53,49 @@ h1, h2, h3, p {
     background-color: transparent;
 }
 
-.chris-background {
+.dwarf-background {
   background-image: url(../images/dwarf.png);
   background-size: 100%;
   background-attachment: fixed;
 }
 
-.chris-font {
+.dwarf-font {
     font-family: "Tourney", sans-serif;
+}
+
+.pink-background {
+    background: #EEAECA;
+    background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+.pink-card {
+    background: #d897b35e;
+}
+
+.pink-text {
+    color: white;
+}
+
+.mango-background {
+    background: #F9D790;
+    background: radial-gradient(circle,#F6C865 0%, #F4BB44 100%);
+}
+.mango-card {
+    background: #d8c3975e;
+}
+
+.mango-text {
+    color: white;
+}
+
+.synth-background {
+    background: #ff8f1f5e;
+    background: radial-gradient(circle,#07000d 0%, #1c011e 100%);
+}
+.synth-card {
+    background: transparent;
+    border-color: #f222ff;
+}
+
+.synth-text {
+    color: #ffffff;
 }
