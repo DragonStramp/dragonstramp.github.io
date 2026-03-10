@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi Standards Flashcards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body data-bs-theme="dark" class="text-center d-flex justify-content-center">
+    <section class="col-md-4 d-flex justify-content-center flex-column">
+        <div class="card shadow col-md-12 mt-5">
+            <h2 id="main-name" class="mt-3">802.11a</h2>
+            <hr>
+                <div class="dropdown mb-3">
+                    <button id="button1" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Frequency
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" onclick="setButton('button1', '2.4 GHz', 0)" href="#">2.4 GHz</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button1', '2.4 GHz / 5 GHz', 0)" href="#">2.4 GHz / 5 GHz</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button1', '5 GHz', 0)" href="#">5 GHz</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button1', '2.4 GHz / 5 GHz / 6 GHz', 0)" href="#">2.4 GHz / 5 GHz / 6 GHz</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown mb-3">
+                    <button id="button2" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Generation Name
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" onclick="setButton('button2', 'Unnamed', 1)" href="#">Unnamed</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button2', 'Wi-Fi 4', 1)" href="#">Wi-Fi 4</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button2', 'Wi-Fi 5', 1)" href="#">Wi-Fi 5</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button2', 'Wi-Fi 6 and 6e', 1)" href="#">Wi-Fi 6 and 6e</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button2', 'Wi-Fi 7', 1)" href="#">Wi-Fi 7</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown mb-3">
+                    <button id="button3" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Max Theoretical Link Rate
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" onclick="setButton('button3', '6-54 MBit/s', 2)" href="#">6-54 Mbit/s</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button3', '1-11 MBit/s', 2)" href="#">1-11 Mbit/s</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button3', '72-600 MBit/s', 2)" href="#">72-600 Mbit/s</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button3', '433-6,933 MBit/s', 2)" href="#">433-6,933 Mbit/s</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button3', '574-9,608 MBit/s', 2)" href="#">574-9,608 Mbit/s</a></li>
+                        <li><a class="dropdown-item" onclick="setButton('button3', '1,376-46,120 MBit/s', 2)" href="#">1,376-46,120 Mbit/s</a></li>
+                    </ul>
+                </div>
+                <hr>
+            <button id="submit-button" onclick="gradeQuestion()" class="btn shadow btn-secondary col-md-2 mx-auto mb-2">Submit</button>
+            <h4 id="streak-text">Streak: 0</h3>
+        </div>
+        <br>
+        <div style="display: none;" id="helper-card" class="card col-md-12 mt-3">
+            <h2 id="helper-third">File Transfer Protocol</h2>
+            <h5 id="helper-main">FTP</h5>
+            <h5 id="helper-second">20/21</h5>
+            <h5 id="helper-fourth">Transport</h5>
+        </div>
+    </section>
+
+</body>
+<script src="js/wifi-standards.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
