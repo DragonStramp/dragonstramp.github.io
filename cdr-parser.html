@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDR Parser</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body data-bs-theme="dark" class="text-center d-flex justify-content-center">
+    <section class="col-10 d-flex justify-content-center flex-column">
+        <h1>CDR Parser</h1>
+        <textarea class="col-4 mx-auto" placeholder="a-leg..." id="a-leg" rows="5"></textarea>
+        <!-- <textarea class="col-4 mx-auto mt-3" placeholder="b-leg..." id="b-leg" rows="5"></textarea> -->
+        <button class="col-2 mx-auto mt-3 btn btn-secondary" onclick="parse()">Parse</button>
+        <hr>
+        <div class="col-5 card shadow mx-auto mt-3">
+            <h3 id="leg-name"></h3>
+            <p id="a-call-started"></p>
+            <p id="a-call-ended"></p>
+            <hr>
+            <p id="a-media-packet-count"></p>
+            <p id="a-skipped-packets"></p>
+            <p id="a-mos"></p>
+            <p id="a-hangup-cause"></p>
+            <p id="a-sip-hangup-disposition"></p>
+            <p id="a-digits-dialed"></p>
+            <hr>
+            <ul class="mx-auto" id="error-list"></ul>
+        </div>
+    </section>
+</body>
+<script src="js/cdr-parser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</html>
