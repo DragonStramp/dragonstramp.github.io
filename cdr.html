@@ -13,22 +13,29 @@
     <section class="col-10 d-flex justify-content-center flex-column">
         <h1>CDR Parser</h1>
         <textarea class="col-4 mx-auto" placeholder="a-leg..." id="a-leg" rows="5"></textarea>
-        <!-- <textarea class="col-4 mx-auto mt-3" placeholder="b-leg..." id="b-leg" rows="5"></textarea> -->
         <button class="col-2 mx-auto mt-3 btn btn-secondary" onclick="parse()">Parse</button>
         <hr>
         <div class="col-5 card shadow mx-auto mt-3">
-            <h3 id="leg-name"></h3>
+            <h4>Call Time</h4>
             <p id="a-call-started"></p>
             <p id="a-call-ended"></p>
+            <p id="a-call-duration"></p>
             <hr>
+            <h4>Call Stats</h4>
             <p id="a-media-packet-count"></p>
             <p id="a-skipped-packets"></p>
+            <p id="a-skipped-percent"></p>
             <p id="a-mos"></p>
-            <p id="a-hangup-cause"></p>
-            <p id="a-sip-hangup-disposition"></p>
+            <p id="a-quality-percent"></p>
             <p id="a-digits-dialed"></p>
             <hr>
-            <ul class="mx-auto" id="error-list"></ul>
+            <h4>Hangup</h4>
+            <a class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Troubleshooting-Debugging/Hangup-Cause-Code-Table_3964945/">Freeswitch Hangup Documentation</a>
+            <p id="a-hangup-cause"></p>
+            <p id="a-sip-hangup-disposition"></p>
+            <hr>
+            <h5>Major Audio Flaws:</h5>
+            <ul class="mx-auto" id="a-error-list"></ul>
         </div>
     </section>
 </body>
