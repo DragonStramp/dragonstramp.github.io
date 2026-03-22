@@ -9,33 +9,72 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<body data-bs-theme="dark" class="text-center d-flex justify-content-center">
-    <section class="col-10 d-flex justify-content-center flex-column">
+<body data-bs-theme="dark" class="col-12 text-center d-flex justify-content-center">
+    <section class="container">
         <h1>CDR Parser</h1>
-        <textarea class="col-4 mx-auto" placeholder="a-leg..." id="a-leg" rows="5"></textarea>
-        <button class="col-2 mx-auto mt-3 btn btn-secondary" onclick="parse()">Parse</button>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5">
+                <textarea class="form-control border-primary" placeholder="a-leg (drag and drop)" id="a-leg" rows="3"></textarea>
+            </div>
+             <div class="col-12 col-md-5">
+                <textarea class="form-control border-info" placeholder="b-leg (drag and drop)" id="b-leg" rows="3"></textarea>
+            </div>
+        </div>
+        <button class="col-2 col-sm-6 mx-auto mt-3 btn btn-secondary" onclick="analyze()">Analyze</button>
         <hr>
-        <div class="col-5 card shadow mx-auto mt-3">
-            <h4>Call Time</h4>
-            <p id="a-call-started"></p>
-            <p id="a-call-ended"></p>
-            <p id="a-call-duration"></p>
-            <hr>
-            <h4>Call Stats</h4>
-            <p id="a-media-packet-count"></p>
-            <p id="a-skipped-packets"></p>
-            <p id="a-skipped-percent"></p>
-            <p id="a-mos"></p>
-            <p id="a-quality-percent"></p>
-            <p id="a-digits-dialed"></p>
-            <hr>
-            <h4>Hangup</h4>
-            <a class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Troubleshooting-Debugging/Hangup-Cause-Code-Table_3964945/">Freeswitch Hangup Documentation</a>
-            <p id="a-hangup-cause"></p>
-            <p id="a-sip-hangup-disposition"></p>
-            <hr>
-            <h5>Major Audio Flaws:</h5>
-            <ul class="mx-auto" id="a-error-list"></ul>
+        <div class="row justify-content-center g-1 mt-4">
+            <div class="col-12 col-md-4 card border-3 border border-primary shadow mx-auto mt-3">
+                <h2>A-Leg</h2>
+                <hr>
+                <h4>Call Time</h4>
+                <p id="a-call-started"></p>
+                <p id="a-call-ended"></p>
+                <p id="a-call-duration"></p>
+                <hr>
+                <h4>Call Stats</h4>
+                <p id="a-media-packet-count"></p>
+                <p id="a-skipped-packets"></p>
+                <p id="a-skipped-percent"></p>
+                <p id="a-mos"></p>
+                <p id="a-quality-percent"></p>
+                <p id="a-digits-dialed"></p>
+                <hr>
+                <h4>Hangup</h4>
+                <a class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    href="https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Troubleshooting-Debugging/Hangup-Cause-Code-Table_3964945/">Freeswitch
+                    Hangup Documentation</a>
+                <p id="a-hangup-cause"></p>
+                <p id="a-sip-hangup-disposition"></p>
+                <hr>
+                <h5>Major Audio Flaws:</h5>
+                <ul class="mx-auto" id="a-error-list"></ul>
+            </div>
+            <div class="col-12 col-md-4 card shadow border-3 border border-info mx-auto mt-3">
+                <h2>B-Leg</h2>
+                <hr>
+                <h4>Call Time</h4>
+                <p id="b-call-started"></p>
+                <p id="b-call-ended"></p>
+                <p id="b-call-duration"></p>
+                <hr>
+                <h4>Call Stats</h4>
+                <p id="b-media-packet-count"></p>
+                <p id="b-skipped-packets"></p>
+                <p id="b-skipped-percent"></p>
+                <p id="b-mos"></p>
+                <p id="b-quality-percent"></p>
+                <p id="b-digits-dialed"></p>
+                <hr>
+                <h4>Hangup</h4>
+                <a class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    href="https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Troubleshooting-Debugging/Hangup-Cause-Code-Table_3964945/">Freeswitch
+                    Hangup Documentation</a>
+                <p id="b-hangup-cause"></p>
+                <p id="b-sip-hangup-disposition"></p>
+                <hr>
+                <h5>Major Audio Flaws:</h5>
+                <ul class="mx-auto" id="b-error-list"></ul>
+            </div>
         </div>
     </section>
 </body>
