@@ -109,6 +109,8 @@ function updateUI(leg, legId) {
     pullInfo(leg.variables["sip_hangup_disposition"], legId + "-sip-hangup-disposition", "SIP Hangup Disposition: ");
     pullInfo(leg.variables["digits_dialed"], legId + "-digits-dialed", "Digits Dialed: ");
 
+    pullInfo(leg.variables["rtp_use_codec_name"], legId + "-codec", "Codec: ");
+
     displayCallStats(leg, legId);
     displayMajorErrors(leg, legId);
 }
@@ -141,7 +143,7 @@ function displayMajorErrors(leg, legId) {
             }
         });
     } else {
-        document.getElementById("total-errors").innerText = "No Flaws Found!";
+        document.getElementById(legId + "-total-errors").innerText = "No Flaws Found!";
     }
 }
 
