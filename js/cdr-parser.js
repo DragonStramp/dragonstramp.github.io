@@ -143,7 +143,7 @@ function displayMajorErrors(leg, legId) {
             }
         });
     } else {
-        document.getElementById(legId + "-total-errors").innerText = "No Flaws Found!";
+        document.getElementById(legId + "-error-title").innerText = "No Flaws Found!";
     }
 }
 
