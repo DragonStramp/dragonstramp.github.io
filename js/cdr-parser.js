@@ -7,24 +7,53 @@ const cardHolder = document.getElementById("card-holder");
 const textBoxHolder = document.getElementById("text-holder");
 
 window.onload = () => {
-    for (let i = 0; i < legCount; i++)
-    {
-        createDropZone(i);
-    }
+    resetTextBoxes();
 };
 
 function createDropZone(dropId) {
-    textBoxHolder.innerHTML += `
+    const html = `
     <div class="col-12 col-md-5">
-        <textarea class="form-control border-primary" placeholder="leg ${dropId} (drag and drop)" id="${dropId}-leg" rows="3"></textarea>
-    </div>`
+        <textarea class="form-control border${getTheme(dropId)}" placeholder="leg ${dropId} (drag and drop)" id="${dropId}-leg" rows="3"></textarea>
+    </div>`;
+    textBoxHolder.insertAdjacentHTML('beforeend', html);
     setupDropZone(dropId.toString() + "-leg");
 }
 
-function createCard(cardId)
+function resetTextBoxes() {
+    textBoxHolder.innerHTML = '';
+    for (let i = 0; i < legCount; i++) {
+        createDropZone(i);
+    }
+}
+
+function updateTextCount(countAdjustment) {
+    legCount += countAdjustment;
+    if (legCount < 1) {
+        legCount = 1;
+    }
+    resetTextBoxes();
+}
+
+function getTheme(legId)
 {
-    cardHolder.innerHTML += `
-                <div class="col-12 col-md-4 card border-3 border border-primary shadow mx-auto mt-3">
+    let theme = "-primary";
+    if(legId == 1)
+    {
+        theme = "-info";
+    } else if (legId == 2)
+    {
+        theme = "-success"
+    } else if (legId == 3)
+    {
+        theme = "-light"
+    }
+
+    return theme;
+}
+
+function createCard(cardId) {
+    const html = `
+                <div class="col-12 col-md-4 card border-3 border border${getTheme(cardId)} shadow mx-auto mt-3">
                 <h4>Call Time</h4>
                 <p id="${cardId}-call-started"></p>
                 <p id="${cardId}-call-ended"></p>
@@ -48,7 +77,8 @@ function createCard(cardId)
                 <hr>
                 <h5 id="${cardId}-error-title">Major Audio Flaws:</h5>
                 <ul class="mx-auto" id="${cardId}-error-list"></ul>
-            </div>`
+            </div>`;
+    cardHolder.insertAdjacentHTML('beforeend', html);
 }
 
 function setupDropZone(cardId) {
@@ -116,11 +146,11 @@ function parseLeg(legId) {
 }
 
 function analyze() {
-    for(let i = 0; i < legCount; i++)
-    {
-        parseLeg(i);
-        updateUI(parseLeg(i), i);
-    }   
+    cardHolder.innerHTML = '';
+    for (let i = 0; i < legCount; i++) {
+        const leg = parseLeg(i);
+        updateUI(leg, i);
+    }
 }
 
 function pullInfo(selector, displayId, displayText) {
@@ -164,12 +194,13 @@ function displayMajorErrors(leg, legId) {
             ? errorLog['error-period']
             : [errorLog['error-period']];
 
+        const mainFlow = Array.isArray(leg.callflow) ? leg.callflow[0] : leg.callflow;
         periods.toReversed().forEach(period => {
             const flawCount = parseInt(period.flaws);
             if (flawCount > 1) {
                 let li = document.createElement("li");
 
-                li.innerText = `${flawCount} flaws at ${calculateTimeBetween(leg.callflow.times["created_time"], period.start)} lasting ${calculateTimeBetween(period.start, period.stop)} seconds`;
+                li.innerText = `${flawCount} flaws at ${calculateTimeBetween(mainFlow.times["created_time"], period.start)} lasting ${calculateTimeBetween(period.start, period.stop)} seconds`;
                 if (flawCount > 5 && flawCount < 15) {
                     li.classList.add("text-warning");
                 } else if (flawCount >= 15) {
@@ -183,8 +214,7 @@ function displayMajorErrors(leg, legId) {
     }
 }
 
-function calculateTimeBetween(time1, time2)
-{
+function calculateTimeBetween(time1, time2) {
     let time = Math.floor(Math.abs((time1 / 1000) - (time2 / 1000)) / 1000);
     let timeMinutes = Math.floor(time / 60);
     let timeSeconds = time % 60;
@@ -207,7 +237,7 @@ function displayCallStats(leg, legId) {
     if (skippedPercent >= 15) {
         document.getElementById(legId + "-skipped-percent").classList.add("text-danger");
     } else if (skippedPercent > 5 && skippedPercent < 15) {
-        document.getElementById("a-skipped-percent").classList.add("text-warning");
+        document.getElementById(legId + "-skipped-percent").classList.add("text-warning");
     }
 
     //Quality Percentage
@@ -220,7 +250,7 @@ function displayCallStats(leg, legId) {
     } else if (Number(qualityPercent) < 100 && Number(qualityPercent) >= 80) {
         document.getElementById(legId + "-quality-percent").classList.add("text-warning");
     } else {
-        document.getElementById("a-quality-percent").classList.add("text-danger");
+        document.getElementById(legId + "-quality-percent").classList.add("text-danger");
     }
 
     //Mos
@@ -233,6 +263,6 @@ function displayCallStats(leg, legId) {
     } else if (Number(mos) < 4.5 && Number(mos) >= 4) {
         document.getElementById(legId + "-mos").classList.add("text-warning");
     } else {
-        document.getElementById("a-mos").classList.add("text-danger");
+        document.getElementById(legId + "-mos").classList.add("text-danger");
     }
 }
