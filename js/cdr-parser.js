@@ -1,10 +1,55 @@
 let aLeg = "";
 let bLeg = "";
 
+let legCount = 2;
+
+const cardHolder = document.getElementById("card-holder");
+const textBoxHolder = document.getElementById("text-holder");
+
 window.onload = () => {
-    setupDropZone("a-leg");
-    setupDropZone("b-leg");
+    for (let i = 0; i < legCount; i++)
+    {
+        createDropZone(i);
+    }
 };
+
+function createDropZone(dropId) {
+    textBoxHolder.innerHTML += `
+    <div class="col-12 col-md-5">
+        <textarea class="form-control border-primary" placeholder="leg ${dropId} (drag and drop)" id="${dropId}-leg" rows="3"></textarea>
+    </div>`
+    setupDropZone(dropId.toString() + "-leg");
+}
+
+function createCard(cardId)
+{
+    cardHolder.innerHTML += `
+                <div class="col-12 col-md-4 card border-3 border border-primary shadow mx-auto mt-3">
+                <h4>Call Time</h4>
+                <p id="${cardId}-call-started"></p>
+                <p id="${cardId}-call-ended"></p>
+                <p id="${cardId}-call-duration"></p>
+                <hr>
+                <h4>Call Stats</h4>
+                <p id="${cardId}-media-packet-count"></p>
+                <p id="${cardId}-skipped-packets"></p>
+                <p id="${cardId}-skipped-percent"></p>
+                <p id="${cardId}-mos"></p>
+                <p id="${cardId}-quality-percent"></p>
+                <p id="${cardId}-digits-dialed"></p>
+                <p id="${cardId}-codec"></p>
+                <hr>
+                <h4>Hangup</h4>
+                <a class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    href="https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Troubleshooting-Debugging/Hangup-Cause-Code-Table_3964945/">Freeswitch
+                    Hangup Documentation</a>
+                <p id="${cardId}-hangup-cause"></p>
+                <p id="${cardId}-sip-hangup-disposition"></p>
+                <hr>
+                <h5 id="${cardId}-error-title">Major Audio Flaws:</h5>
+                <ul class="mx-auto" id="${cardId}-error-list"></ul>
+            </div>`
+}
 
 function setupDropZone(cardId) {
     const dropZone = document.getElementById(cardId);
@@ -55,37 +100,27 @@ function xmlToJSON(node) {
     return obj;
 }
 
-function parseALeg() {
-    let xmlString = document.getElementById("a-leg").value;
+function parseLeg(legId) {
+    let xmlString = document.getElementById(`${legId}-leg`).value;
     const match = xmlString.match(/<cdr[\s\S]*?<\/cdr>/);
 
     const xml = match ? match[0] : null;
 
     let parser = new DOMParser();
     let xmlDoc = parser.parseFromString(xml, "application/xml");
-    aLeg = xmlToJSON(xmlDoc.documentElement);
+    let leg = xmlToJSON(xmlDoc.documentElement);
 
-    console.log("All XML Data as JSON:", aLeg);
-}
+    console.log("All XML Data as JSON:", leg);
 
-function parseBLeg() {
-    let xmlString = document.getElementById("b-leg").value;
-    const match = xmlString.match(/<cdr[\s\S]*?<\/cdr>/);
-
-    const xml = match ? match[0] : null;
-
-    let parser = new DOMParser();
-    let xmlDoc = parser.parseFromString(xml, "application/xml");
-    bLeg = xmlToJSON(xmlDoc.documentElement);
-
-    console.log("All XML Data as JSON:", bLeg);
+    return leg;
 }
 
 function analyze() {
-    parseALeg();
-    parseBLeg();
-    updateUI(aLeg, "a");
-    updateUI(bLeg, "b");
+    for(let i = 0; i < legCount; i++)
+    {
+        parseLeg(i);
+        updateUI(parseLeg(i), i);
+    }   
 }
 
 function pullInfo(selector, displayId, displayText) {
@@ -97,6 +132,7 @@ function pullInfo(selector, displayId, displayText) {
 }
 
 function updateUI(leg, legId) {
+    createCard(legId);
     const mainFlow = Array.isArray(leg.callflow) ? leg.callflow[0] : leg.callflow;
     let start = new Date(parseInt(mainFlow.times.created_time) / 1000).toLocaleString();
     let end = new Date(parseInt(mainFlow.times.hangup_time) / 1000).toLocaleString();
