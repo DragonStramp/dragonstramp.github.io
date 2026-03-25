@@ -121,7 +121,7 @@ function getLegInfo(legId)
         legName = `B-Leg (${legId})`;
     }
 
-    let copyText = (`legName +  Stats: \n` +
+    let copyText = (`${legName} +  Stats: \n` +
         document.getElementById(`${legId}-skipped-percent`).innerText + "\n" +
         document.getElementById(`${legId}-quality-percent`).innerText + "\n" +
         document.getElementById(`${legId}-mos`).innerText + "\n" + 
