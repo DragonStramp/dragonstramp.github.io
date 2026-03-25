@@ -55,6 +55,7 @@ function createCard(cardId) {
     const html = `
                 <div class="col-12 col-md-4 card border-3 border border${getTheme(cardId)} shadow mx-auto mt-3">
                 <h4>Call Time</h4>
+                <button class="mx-auto col-6 mx-2 btn btn-secondary" onclick="copyLegInfo(${cardId})">Copy Leg</button>
                 <p id="${cardId}-call-started"></p>
                 <p id="${cardId}-call-ended"></p>
                 <p id="${cardId}-call-duration"></p>
@@ -108,6 +109,43 @@ function setupDropZone(cardId) {
             reader.readAsText(file);
         }
     });
+}
+
+function getLegInfo(legId)
+{
+    let legName = "";
+    if(legId == 0)
+    {
+        legName = "A-Leg";
+    } else {
+        legName = `B-Leg (${legId})`;
+    }
+
+    let copyText = (`legName +  Stats: \n` +
+        document.getElementById(`${legId}-skipped-percent`).innerText + "\n" +
+        document.getElementById(`${legId}-quality-percent`).innerText + "\n" +
+        document.getElementById(`${legId}-mos`).innerText + "\n" + 
+        document.getElementById(`${legId}-hangup-cause`).innerText + "\n" + 
+        document.getElementById(`${legId}-sip-hangup-disposition`).innerText 
+    )
+
+    return copyText;
+}
+
+function copyLegInfo(legId)
+{
+    navigator.clipboard.writeText(getLegInfo(legId));
+}
+
+function copyCallInfo()
+{
+    let copyText = ""
+    for (let i = 0; i < legCount; i++)
+    {
+        copyText += getLegInfo(i) + "\n\n";
+    }
+
+    navigator.clipboard.writeText(copyText);
 }
 
 function xmlToJSON(node) {
@@ -189,7 +227,7 @@ function displayMajorErrors(leg, legId) {
     listContainer.innerHTML = '';
 
     if (errorLog && errorLog['error-period']) {
-        // pullInfo(errorLog['error-period'].length, "a-total-errors", "Total Flaws: ");
+        pullInfo(errorLog['error-period'].length, `${legId}-error-title`, "Distinct Error Periods: ");
         const periods = Array.isArray(errorLog['error-period'])
             ? errorLog['error-period']
             : [errorLog['error-period']];
