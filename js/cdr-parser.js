@@ -1,6 +1,3 @@
-let aLeg = "";
-let bLeg = "";
-
 let legCount = 2;
 
 const cardHolder = document.getElementById("card-holder");
@@ -9,6 +6,13 @@ const textBoxHolder = document.getElementById("text-holder");
 window.onload = () => {
     resetTextBoxes();
 };
+
+function resetTextBoxes() {
+    textBoxHolder.innerHTML = '';
+    for (let i = 0; i < legCount; i++) {
+        createDropZone(i);
+    }
+}
 
 function createDropZone(dropId) {
     const html = `
@@ -19,12 +23,6 @@ function createDropZone(dropId) {
     setupDropZone(dropId.toString() + "-leg");
 }
 
-function resetTextBoxes() {
-    textBoxHolder.innerHTML = '';
-    for (let i = 0; i < legCount; i++) {
-        createDropZone(i);
-    }
-}
 
 function updateTextCount(countAdjustment) {
     legCount += countAdjustment;
@@ -70,9 +68,7 @@ function createCard(cardId) {
                 <p id="${cardId}-codec"></p>
                 <hr>
                 <h4>Hangup</h4>
-                <a class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
-                    href="https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Troubleshooting-Debugging/Hangup-Cause-Code-Table_3964945/">Freeswitch
-                    Hangup Documentation</a>
+                <a class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"href="https://developer.signalwire.com/freeswitch/FreeSWITCH-Explained/Troubleshooting-Debugging/Hangup-Cause-Code-Table_3964945/">Freeswitch Hangup Documentation</a>
                 <p id="${cardId}-hangup-cause"></p>
                 <p id="${cardId}-sip-hangup-disposition"></p>
                 <hr>
@@ -178,7 +174,7 @@ function parseLeg(legId) {
     let xmlDoc = parser.parseFromString(xml, "application/xml");
     let leg = xmlToJSON(xmlDoc.documentElement);
 
-    console.log("All XML Data as JSON:", leg);
+    console.log(`Leg ${legId} JSON:`, leg);
 
     return leg;
 }
@@ -208,11 +204,9 @@ function updateUI(leg, legId) {
     pullInfo(start, legId + "-call-started", "Call Started: ");
     pullInfo(end, legId + "-call-ended", "Call Ended: ");
     pullInfo(calculateTimeBetween(mainFlow.times.created_time, mainFlow.times.hangup_time), legId + "-call-duration", "Call Duration: ");
-
     pullInfo(leg.variables["hangup_cause"], legId + "-hangup-cause", "Hangup Cause: ");
     pullInfo(leg.variables["sip_hangup_disposition"], legId + "-sip-hangup-disposition", "SIP Hangup Disposition: ");
     pullInfo(leg.variables["digits_dialed"], legId + "-digits-dialed", "Digits Dialed: ");
-
     pullInfo(leg.variables["rtp_use_codec_name"], legId + "-codec", "Codec: ");
 
     displayCallStats(leg, legId);
@@ -285,7 +279,7 @@ function displayCallStats(leg, legId) {
 
     if (Number(qualityPercent) == 100) {
         document.getElementById(legId + "-quality-percent").classList.add("text-success");
-    } else if (Number(qualityPercent) < 100 && Number(qualityPercent) >= 80) {
+    } else if (Number(qualityPercent) < 95 && Number(qualityPercent) >= 80) {
         document.getElementById(legId + "-quality-percent").classList.add("text-warning");
     } else {
         document.getElementById(legId + "-quality-percent").classList.add("text-danger");
@@ -296,9 +290,9 @@ function displayCallStats(leg, legId) {
     let mos = inbound["mos"];
     pullInfo(mos, legId + "-mos", "MOS: ");
 
-    if (Number(mos) == 4.5) {
+    if (Number(mos) >= 4.5) {
         document.getElementById(legId + "-mos").classList.add("text-success");
-    } else if (Number(mos) < 4.5 && Number(mos) >= 4) {
+    } else if (Number(mos) < 4.3 && Number(mos) >= 4) {
         document.getElementById(legId + "-mos").classList.add("text-warning");
     } else {
         document.getElementById(legId + "-mos").classList.add("text-danger");
