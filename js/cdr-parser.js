@@ -17,7 +17,7 @@ function resetTextBoxes() {
 function createDropZone(dropId) {
     const html = `
     <div class="col-12 col-md-5">
-        <textarea class="form-control border${getTheme(dropId)}" placeholder="leg ${dropId} (drag and drop)" id="${dropId}-leg" rows="3"></textarea>
+        <textarea class="form-control border${getTheme(dropId)}" placeholder="${getLegInfo(null, dropId).legName} (drag and drop)" id="${dropId}-leg" rows="3"></textarea>
     </div>`;
     textBoxHolder.insertAdjacentHTML('beforeend', html);
     setupDropZone(dropId.toString() + "-leg");
@@ -35,14 +35,11 @@ function updateTextCount(countAdjustment) {
 function getTheme(legId)
 {
     let theme = "-primary";
-    if(legId == 1)
-    {
+    if(legId == 1) {
         theme = "-info";
-    } else if (legId == 2)
-    {
+    } else if (legId == 2) {
         theme = "-success"
-    } else if (legId == 3)
-    {
+    } else if (legId == 3) {
         theme = "-light"
     }
 
@@ -52,8 +49,11 @@ function getTheme(legId)
 function createCard(cardId) {
     const html = `
                 <div class="col-12 col-md-4 card border-3 border border${getTheme(cardId)} shadow mx-auto mt-3">
-                <h4>Call Time</h4>
+                <h4 id="${cardId}-leg-name"></h4>
+                <p id="${cardId}-cid"></p>
                 <button class="mx-auto col-6 mx-2 btn btn-secondary" onclick="copyLegInfo(${cardId})">Copy Leg</button>
+                <hr>
+                <h4>Call Time</h4>
                 <p id="${cardId}-call-started"></p>
                 <p id="${cardId}-call-ended"></p>
                 <p id="${cardId}-call-duration"></p>
@@ -107,15 +107,9 @@ function setupDropZone(cardId) {
     });
 }
 
-function getLegInfo(legId)
+function getCopyInfo(legId)
 {
-    let legName = "";
-    if(legId == 0)
-    {
-        legName = "A-Leg";
-    } else {
-        legName = `B-Leg (${legId})`;
-    }
+    let legName = getLegInfo(null, legId).legName;
 
     let copyText = (`${legName} Stats: \n` +
         document.getElementById(`${legId}-skipped-percent`).innerText + "\n" +
@@ -130,14 +124,13 @@ function getLegInfo(legId)
 
 function copyLegInfo(legId)
 {
-    navigator.clipboard.writeText(getLegInfo(legId));
+    navigator.clipboard.writeText(getCopyInfo(legId));
 }
 
 function copyCallInfo()
 {
     let copyText = ""
-    for (let i = 0; i < legCount; i++)
-    {
+    for (let i = 0; i < legCount; i++) {
         copyText += getLegInfo(i) + "\n\n";
     }
 
@@ -195,12 +188,47 @@ function pullInfo(selector, displayId, displayText) {
     }
 }
 
+function getLegInfo(leg, legId)
+{
+    let legInfo = {cid: "", legName: ""}
+
+    if(legId == 0)
+    {
+        if(leg != null)
+        {
+            if(Array.isArray(leg.callflow)) {
+                legInfo.cid = leg.callflow[0]["caller_profile"]["caller_id_name"];
+            } else if (leg.callflow["caller_profile"]) {
+                legInfo.cid = leg.callflow["caller_profile"]["caller_id_name"];
+            }
+        }
+        legInfo.legName = "A-Leg";
+    } else {
+        if(leg != null)
+        {
+            if(Array.isArray(leg.callflow)) {
+                legInfo.cid = leg.callflow[0]["caller_profile"]["callee_id_name"];
+            } else if (leg.callflow["caller_profile"]) {
+                legInfo.cid = leg.callflow["caller_profile"]["callee_id_name"];
+                if(legInfo.cid == "Outbound Call") {
+                    legInfo.cid = "Answered by Internal User";
+                }
+            }
+        }
+        legInfo.legName = `B-Leg (${legId})`;
+    }
+
+    return legInfo;
+}
+
 function updateUI(leg, legId) {
     createCard(legId);
     const mainFlow = Array.isArray(leg.callflow) ? leg.callflow[0] : leg.callflow;
     let start = new Date(parseInt(mainFlow.times.created_time) / 1000).toLocaleString();
     let end = new Date(parseInt(mainFlow.times.hangup_time) / 1000).toLocaleString();
 
+    pullInfo(getLegInfo(leg, legId).cid, legId +"-cid", "");
+    pullInfo(getLegInfo(leg, legId).legName, legId +"-leg-name", "");
     pullInfo(start, legId + "-call-started", "Call Started: ");
     pullInfo(end, legId + "-call-ended", "Call Ended: ");
     pullInfo(calculateTimeBetween(mainFlow.times.created_time, mainFlow.times.hangup_time), legId + "-call-duration", "Call Duration: ");
