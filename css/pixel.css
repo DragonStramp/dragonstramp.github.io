@@ -1,0 +1,29 @@
+body {
+    background-color: #625565;
+    display: flex;
+    justify-content: center; /* center horizontally */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center images inside */
+    width: 30%; /* control scaling here */
+}
+
+img {
+    height: auto;
+    image-rendering: pixelated;
+}
+
+#memes-button {
+    cursor: pointer;
+    width: 495px;
+    height: 125px;
+    transition-duration: 0.1s;
+    background-image: url("../images/Memes-Button.png");
+}
+
+#memes-button:hover {
+    background-image: url("../images/Memes-Button-Pressed.png");
+}
