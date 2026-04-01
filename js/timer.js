@@ -53,14 +53,14 @@ function getShiftWorkWeekProgress({startDay = 1, endDay = 5, shiftStart = 6} = {
 }
 
 function updateTimers() {
-  const sixPercent = getShiftWorkWeekProgress({ shiftStart: 6 }).toFixed(2);
+  const sixPercent = getShiftWorkWeekProgress({ shiftStart: 6 }).toFixed(7);
   sixAmTimer.style.width = sixPercent + "%";
   if(sixPercent >= 100) {
     sixAmTimer.style.background = rainbowGradient
   }
   sixAmPercent.innerText = `6AM SHIFT: ${sixPercent}%`;
 
-  const sevenPercent = getShiftWorkWeekProgress({ shiftStart: 7 }).toFixed(6);
+  const sevenPercent = getShiftWorkWeekProgress({ shiftStart: 7 }).toFixed(3);
   sevenAmTimer.style.width = sevenPercent + "%";
   if(sevenPercent >= 100) {
     sevenAmTimer.style.background = rainbowGradient;
