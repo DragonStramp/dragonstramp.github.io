@@ -146,6 +146,7 @@ function copyLegInfo(legId)
 function copyCallInfo()
 {
     let copyText = ""
+    copyText = `<p><b>${document.getElementById("0-call-started").innerText} Call Stats: </b></p><hr>`
     for (let i = 0; i < legCount; i++) {
         copyText += getCopyInfo(i) + "\n\n";
     }
@@ -245,7 +246,7 @@ function updateUI(leg, legId) {
 
     pullInfo(getLegInfo(leg, legId).cid, legId +"-cid", "");
     pullInfo(getLegInfo(leg, legId).legName, legId +"-leg-name", "");
-    pullInfo(start, legId + "-call-started", "Call Started: ");
+    pullInfo(start, legId + "-call-started", "");
     pullInfo(end, legId + "-call-ended", "Call Ended: ");
     pullInfo(calculateTimeBetween(mainFlow.times.created_time, mainFlow.times.hangup_time), legId + "-call-duration", "Call Duration: ");
     pullInfo(leg.variables["hangup_cause"], legId + "-hangup-cause", "Hangup Cause: ");
