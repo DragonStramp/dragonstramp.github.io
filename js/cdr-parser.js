@@ -111,30 +111,46 @@ function getCopyInfo(legId)
 {
     let legName = getLegInfo(null, legId).legName;
 
-    let copyText = (`${legName} Stats: \n` +
-        document.getElementById(`${legId}-skipped-percent`).innerText + "\n" +
-        document.getElementById(`${legId}-quality-percent`).innerText + "\n" +
-        document.getElementById(`${legId}-mos`).innerText + "\n" + 
-        document.getElementById(`${legId}-hangup-cause`).innerText + "\n" + 
-        document.getElementById(`${legId}-sip-hangup-disposition`).innerText 
-    )
+    let copyHTML = `
+    <p><b>${legName} Stats: </b></p>
+    <p>${document.getElementById(`${legId}-media-packet-count`).innerText}</p>
+    <p>${document.getElementById(`${legId}-skipped-packets`).innerText}</p>
+    <p>${document.getElementById(`${legId}-skipped-percent`).innerText}</p>
+    <p>${document.getElementById(`${legId}-quality-percent`).innerText}</p>
+    <p>${document.getElementById(`${legId}-sip-hangup-disposition`).innerText}</p>
+    <hr>
+    `
+    return copyHTML;
+}
 
-    return copyText;
+function createCopyBox(copyText)
+{
+    let copyable = document.createElement("div");
+    document.body.appendChild(copyable);
+    console.log(copyable);
+    copyable.innerHTML = copyText;
+    const range = document.createRange();
+    range.selectNodeContents(copyable);
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand("copy");
+    copyable.remove();
 }
 
 function copyLegInfo(legId)
 {
-    navigator.clipboard.writeText(getCopyInfo(legId));
+    createCopyBox(getCopyInfo(legId));
 }
 
 function copyCallInfo()
 {
     let copyText = ""
     for (let i = 0; i < legCount; i++) {
-        copyText += getLegInfo(i) + "\n\n";
+        copyText += getCopyInfo(i) + "\n\n";
     }
 
-    navigator.clipboard.writeText(copyText);
+    createCopyBox(copyText);
 }
 
 function xmlToJSON(node) {
@@ -309,7 +325,7 @@ function displayCallStats(leg, legId) {
         document.getElementById(legId + "-quality-percent").classList.add("text-success");
     } else if (Number(qualityPercent) < 95 && Number(qualityPercent) >= 80) {
         document.getElementById(legId + "-quality-percent").classList.add("text-warning");
-    } else {
+    } else if (Number(qualityPercent) < 80) {
         document.getElementById(legId + "-quality-percent").classList.add("text-danger");
     }
 
@@ -322,7 +338,7 @@ function displayCallStats(leg, legId) {
         document.getElementById(legId + "-mos").classList.add("text-success");
     } else if (Number(mos) < 4.3 && Number(mos) >= 4) {
         document.getElementById(legId + "-mos").classList.add("text-warning");
-    } else {
+    } else if (Number(mos) < 4) {
         document.getElementById(legId + "-mos").classList.add("text-danger");
     }
 }
